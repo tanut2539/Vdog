@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2DA85A8930E7A29D307C94B5 /* Pods_Vdog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7A8A0F1FC67111560D2CD4 /* Pods_Vdog.framework */; };
-		540F99801FE16EED007341EF /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540F997F1FE16EEC007341EF /* LocalAuthentication.framework */; };
 		543EC4961FE03F76005F848B /* SpeciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543EC4951FE03F76005F848B /* SpeciesViewController.swift */; };
 		543FA4EC1FDE881500C35798 /* SelectedDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FA4EB1FDE881400C35798 /* SelectedDogsViewController.swift */; };
 		543FA4EE1FDE884300C35798 /* SelectedDogsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FA4ED1FDE884300C35798 /* SelectedDogsCell.swift */; };
-		5446275C1FDFD49F003130B1 /* ClinicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446275B1FDFD49F003130B1 /* ClinicViewController.swift */; };
 		5446275E1FDFD4CF003130B1 /* AddClinicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446275D1FDFD4CF003130B1 /* AddClinicViewController.swift */; };
+		546741B11FE1E16600E35BC7 /* SelectedClinicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546741B01FE1E16600E35BC7 /* SelectedClinicViewController.swift */; };
+		546741B31FE1E17E00E35BC7 /* SelectedClinicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546741B21FE1E17E00E35BC7 /* SelectedClinicCell.swift */; };
 		546C9BCB1FE097330029E158 /* bark.wav in Resources */ = {isa = PBXBuildFile; fileRef = 546C9BCA1FE097330029E158 /* bark.wav */; };
 		54BD253F1FDC36C800B176E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BD253E1FDC36C800B176E7 /* AppDelegate.swift */; };
 		54BD25471FDC36C800B176E7 /* Vdog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54BD25451FDC36C800B176E7 /* Vdog.xcdatamodeld */; };
@@ -47,8 +47,9 @@
 		543EC4951FE03F76005F848B /* SpeciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesViewController.swift; sourceTree = "<group>"; };
 		543FA4EB1FDE881400C35798 /* SelectedDogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDogsViewController.swift; sourceTree = "<group>"; };
 		543FA4ED1FDE884300C35798 /* SelectedDogsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDogsCell.swift; sourceTree = "<group>"; };
-		5446275B1FDFD49F003130B1 /* ClinicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicViewController.swift; sourceTree = "<group>"; };
 		5446275D1FDFD4CF003130B1 /* AddClinicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClinicViewController.swift; sourceTree = "<group>"; };
+		546741B01FE1E16600E35BC7 /* SelectedClinicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedClinicViewController.swift; sourceTree = "<group>"; };
+		546741B21FE1E17E00E35BC7 /* SelectedClinicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedClinicCell.swift; sourceTree = "<group>"; };
 		546C9BCA1FE097330029E158 /* bark.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bark.wav; sourceTree = "<group>"; };
 		54BD253B1FDC36C800B176E7 /* Vdog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vdog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54BD253E1FDC36C800B176E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				540F99801FE16EED007341EF /* LocalAuthentication.framework in Frameworks */,
 				2DA85A8930E7A29D307C94B5 /* Pods_Vdog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +150,7 @@
 				54EB8F391FDC5A04005C56A3 /* DogsCell.swift */,
 				543FA4ED1FDE884300C35798 /* SelectedDogsCell.swift */,
 				54E944E51FE04A5D005547A0 /* SpeciesCell.swift */,
+				546741B21FE1E17E00E35BC7 /* SelectedClinicCell.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -184,9 +185,9 @@
 				54CE5DC21FDD4C8600754882 /* AddDogsViewController.swift */,
 				54E5C4A21FDD9C54009FA006 /* EventsInfoViewController.swift */,
 				543FA4EB1FDE881400C35798 /* SelectedDogsViewController.swift */,
-				5446275B1FDFD49F003130B1 /* ClinicViewController.swift */,
 				5446275D1FDFD4CF003130B1 /* AddClinicViewController.swift */,
 				543EC4951FE03F76005F848B /* SpeciesViewController.swift */,
+				546741B01FE1E16600E35BC7 /* SelectedClinicViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -380,9 +381,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5446275C1FDFD49F003130B1 /* ClinicViewController.swift in Sources */,
 				54E944E61FE04A5D005547A0 /* SpeciesCell.swift in Sources */,
 				543FA4EC1FDE881500C35798 /* SelectedDogsViewController.swift in Sources */,
+				546741B31FE1E17E00E35BC7 /* SelectedClinicCell.swift in Sources */,
 				54EB8F401FDCFC11005C56A3 /* AddEventsViewController.swift in Sources */,
 				54BD253F1FDC36C800B176E7 /* AppDelegate.swift in Sources */,
 				54EB8F301FDC4ACC005C56A3 /* CustomTabbar.swift in Sources */,
@@ -401,6 +402,7 @@
 				54E5C4A31FDD9C54009FA006 /* EventsInfoViewController.swift in Sources */,
 				54EB8F361FDC56E0005C56A3 /* SettingsViewController.swift in Sources */,
 				543FA4EE1FDE884300C35798 /* SelectedDogsCell.swift in Sources */,
+				546741B11FE1E16600E35BC7 /* SelectedClinicViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

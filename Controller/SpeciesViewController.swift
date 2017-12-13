@@ -25,6 +25,7 @@ class SpeciesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.GetSpecisList()
+        self.tableView.tableFooterView = UIView()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -94,6 +94,7 @@ class DogsViewController: UICollectionViewController, UICollectionViewDelegateFl
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 10.0
         self.collectionView!.collectionViewLayout = layout
+
         // MARK: LoadPlist()
         self.LoadUserPlist()
         // ReadData
@@ -103,6 +104,7 @@ class DogsViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     }
 
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // MARK: LoadPlist()

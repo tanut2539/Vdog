@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddEventsViewController: UITableViewController, UITextViewDelegate, UITextFieldDelegate, DataEnteredDelegate {
+class AddEventsViewController: UITableViewController, UITextViewDelegate, UITextFieldDelegate, DataEnteredDelegate, ClinicDelegate {
 
     // Loading
     var loadingView = UIView()
@@ -235,11 +235,18 @@ class AddEventsViewController: UITableViewController, UITextViewDelegate, UIText
         if segue.identifier == "SelectedDogs" {
             let view = segue.destination as! SelectedDogsViewController
             view.delegate = self
+        } else if segue.identifier == "SelectedClinic" {
+            let view = segue.destination as! SelectedClinicViewController
+            view.delegate = self
         }
     }
     
     func userDidEnterInformation(info: String) {
         self.TextEventsDogs.text = info
+    }
+    
+    func SelectedClinic(info: String) {
+        self.TextEventsHospitalName.text = info
     }
     
     private func AddEvents() {

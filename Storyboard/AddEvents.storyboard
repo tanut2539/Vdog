@@ -266,7 +266,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="ระบุโรงพยาบาลหรือคลิกนิกที่นำไปรักษา" id="aq2-bq-Yeg">
+                            <tableViewSection headerTitle="เลือกคลินิกที่พาไปรักษา" id="aq2-bq-Yeg">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="iK6-Bo-JIn">
                                         <rect key="frame" x="0.0" y="984.66666666666686" width="375" height="80"/>
@@ -278,19 +278,34 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ระบุชื่อคลินิก" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="n9o-px-O6R">
                                                     <rect key="frame" x="18" y="16" width="340" height="48"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="48" id="8Fb-i7-wbE"/>
-                                                        <constraint firstAttribute="width" constant="340" id="xaq-9s-LXd"/>
+                                                        <constraint firstAttribute="width" constant="340" id="0Le-3G-Rpe"/>
+                                                        <constraint firstAttribute="height" constant="48" id="h7X-a9-DRe"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2y-k0-aB6">
+                                                    <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="340" id="MJ3-hy-AT7"/>
+                                                        <constraint firstAttribute="height" constant="48" id="oH5-M3-2hu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                                    <connections>
+                                                        <segue destination="hUR-Ha-su5" kind="push" identifier="SelectedClinic" id="obm-qb-S7N"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="n9o-px-O6R" secondAttribute="bottom" constant="15.67" id="24W-ku-FaS"/>
-                                                <constraint firstItem="n9o-px-O6R" firstAttribute="leading" secondItem="g2k-6B-VCr" secondAttribute="leading" constant="18" id="h2B-cv-Z2u"/>
-                                                <constraint firstItem="n9o-px-O6R" firstAttribute="top" secondItem="g2k-6B-VCr" secondAttribute="top" constant="16" id="htK-9Y-e14"/>
-                                                <constraint firstAttribute="trailing" secondItem="n9o-px-O6R" secondAttribute="trailing" constant="17" id="wIw-c1-lLL"/>
+                                                <constraint firstAttribute="bottom" secondItem="n9o-px-O6R" secondAttribute="bottom" constant="16" id="Gwj-t4-pY9"/>
+                                                <constraint firstAttribute="bottom" secondItem="I2y-k0-aB6" secondAttribute="bottom" constant="16" id="aHi-x1-3aH"/>
+                                                <constraint firstItem="I2y-k0-aB6" firstAttribute="leading" secondItem="g2k-6B-VCr" secondAttribute="leading" constant="18" id="bNW-Zg-pfb"/>
+                                                <constraint firstItem="n9o-px-O6R" firstAttribute="leading" secondItem="g2k-6B-VCr" secondAttribute="leading" constant="18" id="gy5-N8-b9N"/>
+                                                <constraint firstAttribute="trailing" secondItem="n9o-px-O6R" secondAttribute="trailing" constant="17" id="hDb-xS-kwW"/>
+                                                <constraint firstAttribute="trailing" secondItem="I2y-k0-aB6" secondAttribute="trailing" constant="17" id="ogb-y5-CZB"/>
+                                                <constraint firstItem="I2y-k0-aB6" firstAttribute="top" secondItem="g2k-6B-VCr" secondAttribute="top" constant="16" id="vhu-oM-QXP"/>
+                                                <constraint firstItem="n9o-px-O6R" firstAttribute="top" secondItem="g2k-6B-VCr" secondAttribute="top" constant="16" id="zJF-Qh-MZB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -398,29 +413,42 @@
         <!--เลือกคลินิก-->
         <scene sceneID="dz0-qg-0j9">
             <objects>
-                <tableViewController storyboardIdentifier="SelectedClinic" id="hUR-Ha-su5" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SelectedClinic" id="hUR-Ha-su5" customClass="SelectedClinicViewController" customModule="Vdog" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UUO-vF-CYd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="jhO-de-Zdp" rowHeight="80" style="IBUITableViewCellStyleDefault" id="qVh-gg-Lm0">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="qVh-gg-Lm0" customClass="SelectedClinicCell" customModule="Vdog" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qVh-gg-Lm0" id="9sS-mt-w77">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="แสดงชื่อคลินิก" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jhO-de-Zdp">
-                                            <rect key="frame" x="15" y="0.0" width="344" height="79.666666666666671"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="18"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="แสดงชื่อคลินิก" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvS-G1-SMX">
+                                            <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="340" id="Js3-Tr-LqY"/>
+                                                <constraint firstAttribute="height" constant="48" id="rGE-t4-yRa"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="20"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="OvS-G1-SMX" secondAttribute="bottom" constant="15.67" id="D2C-Fq-p1E"/>
+                                        <constraint firstItem="OvS-G1-SMX" firstAttribute="leading" secondItem="9sS-mt-w77" secondAttribute="leading" constant="18" id="jwE-Rg-vZ9"/>
+                                        <constraint firstAttribute="trailing" secondItem="OvS-G1-SMX" secondAttribute="trailing" constant="17" id="pWi-sd-KZo"/>
+                                        <constraint firstItem="OvS-G1-SMX" firstAttribute="top" secondItem="9sS-mt-w77" secondAttribute="top" constant="16" id="swY-zp-3uP"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="ClinicName" destination="OvS-G1-SMX" id="Yoz-cb-xjR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -444,26 +472,127 @@
         <!--เพิ่มคลินิก-->
         <scene sceneID="4fP-x5-zGJ">
             <objects>
-                <tableViewController id="E7x-hq-mvM" customClass="AddClinicViewController" customModule="Vdog" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="gv2-sq-Np7">
+                <tableViewController storyboardIdentifier="AddClinic" id="E7x-hq-mvM" customClass="AddClinicViewController" customModule="Vdog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="gv2-sq-Np7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="separatorColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="ag2-Me-62a">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เพิ่มคลินิกใหม่" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JI-03-CLO">
+                                    <rect key="frame" x="18" y="18" width="340" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="iIB-ut-S6F"/>
+                                        <constraint firstAttribute="width" constant="340" id="j10-Y1-orI"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="28"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*กรุณากรอกข้อมูลให้ครบถ้วน" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUs-Rc-Tdo">
+                                    <rect key="frame" x="18" y="54" width="340" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="340" id="5BO-DC-i8m"/>
+                                        <constraint firstAttribute="height" constant="48" id="sdO-w1-fEX"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="20"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="9JI-03-CLO" secondAttribute="trailing" constant="17" id="4TG-Hl-E9b"/>
+                                <constraint firstItem="tUs-Rc-Tdo" firstAttribute="leading" secondItem="ag2-Me-62a" secondAttribute="leading" constant="18" id="AZU-Cu-KuJ"/>
+                                <constraint firstItem="9JI-03-CLO" firstAttribute="top" secondItem="ag2-Me-62a" secondAttribute="top" constant="18" id="J7o-fX-KpJ"/>
+                                <constraint firstItem="9JI-03-CLO" firstAttribute="leading" secondItem="ag2-Me-62a" secondAttribute="leading" constant="18" id="QgX-FU-6qi"/>
+                                <constraint firstAttribute="trailing" secondItem="tUs-Rc-Tdo" secondAttribute="trailing" constant="17" id="kcg-5V-eaZ"/>
+                                <constraint firstItem="tUs-Rc-Tdo" firstAttribute="top" secondItem="ag2-Me-62a" secondAttribute="top" constant="54" id="qHk-4o-TwN"/>
+                            </constraints>
                         </view>
                         <sections>
-                            <tableViewSection id="XEK-6C-ynX">
+                            <tableViewSection headerTitle="ชื่อคลินิก" id="XEK-6C-ynX">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="9hY-qp-Ebc">
-                                        <rect key="frame" x="0.0" y="120" width="375" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="9hY-qp-Ebc">
+                                        <rect key="frame" x="0.0" y="175.33333333333334" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9hY-qp-Ebc" id="arR-hd-tTF">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="กรอกชื่อคลินิก" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="c3Q-je-JcH">
+                                                    <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="340" id="3d4-hC-gYz"/>
+                                                        <constraint firstAttribute="height" constant="48" id="aZT-EG-3ej"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="c3Q-je-JcH" firstAttribute="leading" secondItem="arR-hd-tTF" secondAttribute="leading" constant="18" id="3XL-dL-cJZ"/>
+                                                <constraint firstItem="c3Q-je-JcH" firstAttribute="top" secondItem="arR-hd-tTF" secondAttribute="top" constant="16" id="4YE-ke-V46"/>
+                                                <constraint firstAttribute="trailing" secondItem="c3Q-je-JcH" secondAttribute="trailing" constant="17" id="BIj-kD-qVj"/>
+                                                <constraint firstAttribute="bottom" secondItem="c3Q-je-JcH" secondAttribute="bottom" constant="15.67" id="Tpi-Ho-WKm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="ที่อยู่คลินิก" id="F6w-GS-ZAi">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="120" id="3T9-IW-x2b">
+                                        <rect key="frame" x="0.0" y="311.33333333333337" width="375" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3T9-IW-x2b" id="tyK-cZ-xO0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.66666666666667"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ATe-jm-Gmi">
+                                                    <rect key="frame" x="18" y="10.000000000000114" width="340" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="เบอร์โทรศัพท์" id="tRb-Zq-rJx">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="XB3-T0-1Hp">
+                                        <rect key="frame" x="0.0" y="487.33333333333337" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XB3-T0-1Hp" id="TAT-ao-qbX">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="กรอกเบอร์โทรศัพท์" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="q3r-oi-7fz">
+                                                    <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="340" id="Uac-Zw-FS0"/>
+                                                        <constraint firstAttribute="height" constant="48" id="dJb-Mf-ehz"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="q3r-oi-7fz" firstAttribute="leading" secondItem="TAT-ao-qbX" secondAttribute="leading" constant="18" id="WJU-sn-tHF"/>
+                                                <constraint firstItem="q3r-oi-7fz" firstAttribute="top" secondItem="TAT-ao-qbX" secondAttribute="top" constant="16" id="dND-Fr-qiP"/>
+                                                <constraint firstAttribute="bottom" secondItem="q3r-oi-7fz" secondAttribute="bottom" constant="15.67" id="gXi-gj-Dfd"/>
+                                                <constraint firstAttribute="trailing" secondItem="q3r-oi-7fz" secondAttribute="trailing" constant="17" id="twS-MC-7j0"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -474,7 +603,16 @@
                             <outlet property="delegate" destination="E7x-hq-mvM" id="li0-L9-Idq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="เพิ่มคลินิก" id="dGS-D3-K9a"/>
+                    <navigationItem key="navigationItem" title="เพิ่มคลินิก" id="dGS-D3-K9a">
+                        <barButtonItem key="rightBarButtonItem" image="checkmark" id="qUK-cI-eGs">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="TextAddressClinic" destination="ATe-jm-Gmi" id="ET9-iR-0c3"/>
+                        <outlet property="TextClinicPhone" destination="q3r-oi-7fz" id="eqp-73-nQk"/>
+                        <outlet property="TextNameClinic" destination="c3Q-je-JcH" id="50X-RS-IZc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y6f-B4-uZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -637,6 +775,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="m9v-g8-b71"/>
-        <segue reference="4Rb-lO-bBf"/>
+        <segue reference="w3N-gX-YHp"/>
+        <segue reference="obm-qb-S7N"/>
     </inferredMetricsTieBreakers>
 </document>

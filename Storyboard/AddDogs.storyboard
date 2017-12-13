@@ -246,10 +246,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="ระบุน้ำหนักสุนัข" id="xRz-bE-FK1">
+                            <tableViewSection headerTitle="ระบุน้ำหนักสุนัข" footerTitle="หน่วยน้ำหนัก: กิโลกรัม" id="xRz-bE-FK1">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="oCu-D0-aNf">
-                                        <rect key="frame" x="0.0" y="856.66666666666674" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="864.00000000000011" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oCu-D0-aNf" id="D7q-kE-WRr">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
@@ -279,7 +279,7 @@
                             <tableViewSection headerTitle="เลือกกรุ๊ปเลือด" id="KhX-sG-4y2">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="I6D-vW-zxK">
-                                        <rect key="frame" x="0.0" y="992.00000000000011" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="1012.0000000000001" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I6D-vW-zxK" id="1Pj-zh-4pq">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>

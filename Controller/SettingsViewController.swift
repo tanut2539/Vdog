@@ -76,8 +76,11 @@ class SettingsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.section == 1 && indexPath.row == 1 {
-            
+        if indexPath.section == 0 && indexPath.row == 0 {
+            let storyboard = UIStoryboard(name: "AddEvents", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "AddClinic") as! AddClinicViewController
+            self.navigationController?.pushViewController(vc,animated: true)
+        } else if indexPath.section == 1 && indexPath.row == 1 {
             let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
             let titleFont = [NSAttributedStringKey.font: UIFont(name: "Itim-Regular", size: 18.0)!]
             let messageFont = [NSAttributedStringKey.font: UIFont(name: "Itim-Regular", size: 18.0)!]

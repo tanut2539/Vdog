@@ -21,6 +21,7 @@ class NotificationsList {
     fileprivate let ITEMS_KEY = "NotificationsItems"
     
     func addItem(_ item: NotificationsItem){
+        
         var NotiDictionary = UserDefaults.standard.dictionary(forKey: ITEMS_KEY) ?? Dictionary()
         NotiDictionary[item.UUID] = ["deadline": item.deadline, "title": item.title, "UUID": item.UUID]
         UserDefaults.standard.set(NotiDictionary, forKey: ITEMS_KEY)
@@ -33,7 +34,10 @@ class NotificationsList {
         notification.userInfo = ["title": item.title, "UUID": item.UUID]
         notification.applicationIconBadgeNumber = UIApplication.shared.applicationIconBadgeNumber + 1
         UIApplication.shared.scheduleLocalNotification(notification)
+        
+        
+        
     }
-    
+
     
 }
