@@ -7,23 +7,79 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DA85A8930E7A29D307C94B5 /* Pods_Vdog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7A8A0F1FC67111560D2CD4 /* Pods_Vdog.framework */; };
+		543EC4961FE03F76005F848B /* SpeciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543EC4951FE03F76005F848B /* SpeciesViewController.swift */; };
+		543FA4EC1FDE881500C35798 /* SelectedDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FA4EB1FDE881400C35798 /* SelectedDogsViewController.swift */; };
+		543FA4EE1FDE884300C35798 /* SelectedDogsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FA4ED1FDE884300C35798 /* SelectedDogsCell.swift */; };
+		5446275C1FDFD49F003130B1 /* ClinicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446275B1FDFD49F003130B1 /* ClinicViewController.swift */; };
+		5446275E1FDFD4CF003130B1 /* AddClinicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5446275D1FDFD4CF003130B1 /* AddClinicViewController.swift */; };
+		546C9BCB1FE097330029E158 /* bark.wav in Resources */ = {isa = PBXBuildFile; fileRef = 546C9BCA1FE097330029E158 /* bark.wav */; };
 		54BD253F1FDC36C800B176E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BD253E1FDC36C800B176E7 /* AppDelegate.swift */; };
-		54BD25411FDC36C800B176E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BD25401FDC36C800B176E7 /* ViewController.swift */; };
-		54BD25441FDC36C800B176E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54BD25421FDC36C800B176E7 /* Main.storyboard */; };
 		54BD25471FDC36C800B176E7 /* Vdog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54BD25451FDC36C800B176E7 /* Vdog.xcdatamodeld */; };
 		54BD25491FDC36C800B176E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54BD25481FDC36C800B176E7 /* Assets.xcassets */; };
 		54BD254C1FDC36C800B176E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54BD254A1FDC36C800B176E7 /* LaunchScreen.storyboard */; };
+		54C6B0F61FDC39AF00E2DE81 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54C6B0F51FDC39AF00E2DE81 /* SignIn.storyboard */; };
+		54C6B0F91FDC3ADD00E2DE81 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C6B0F81FDC3ADD00E2DE81 /* SignInViewController.swift */; };
+		54C6B0FB1FDC3AE800E2DE81 /* Itim-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54C6B0FA1FDC3AE800E2DE81 /* Itim-Regular.ttf */; };
+		54CC7C421FDD28B400F3FD78 /* Email.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54CC7C411FDD28B400F3FD78 /* Email.plist */; };
+		54CE5DC31FDD4C8600754882 /* AddDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE5DC21FDD4C8600754882 /* AddDogsViewController.swift */; };
+		54E39E701FDC425300DEC869 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E39E6F1FDC425300DEC869 /* Images.swift */; };
+		54E39E731FDC434400DEC869 /* IconApp.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E39E721FDC434400DEC869 /* IconApp.png */; };
+		54E5C4A11FDD8592009FA006 /* IconApp_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5C4A01FDD8592009FA006 /* IconApp_1024.png */; };
+		54E5C4A31FDD9C54009FA006 /* EventsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E5C4A21FDD9C54009FA006 /* EventsInfoViewController.swift */; };
+		54E944E61FE04A5D005547A0 /* SpeciesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E944E51FE04A5D005547A0 /* SpeciesCell.swift */; };
+		54EB8F2E1FDC4A8C005C56A3 /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54EB8F2D1FDC4A8C005C56A3 /* Events.storyboard */; };
+		54EB8F301FDC4ACC005C56A3 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB8F2F1FDC4ACC005C56A3 /* CustomTabbar.swift */; };
+		54EB8F321FDC4D77005C56A3 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB8F311FDC4D77005C56A3 /* EventsViewController.swift */; };
+		54EB8F341FDC4DD3005C56A3 /* EventsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB8F331FDC4DD3005C56A3 /* EventsCell.swift */; };
+		54EB8F361FDC56E0005C56A3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB8F351FDC56E0005C56A3 /* SettingsViewController.swift */; };
+		54EB8F381FDC59F4005C56A3 /* DogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB8F371FDC59F4005C56A3 /* DogsViewController.swift */; };
+		54EB8F3A1FDC5A04005C56A3 /* DogsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB8F391FDC5A04005C56A3 /* DogsCell.swift */; };
+		54EB8F3C1FDC961B005C56A3 /* AddEvents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54EB8F3B1FDC961B005C56A3 /* AddEvents.storyboard */; };
+		54EB8F3E1FDC9628005C56A3 /* AddDogs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54EB8F3D1FDC9628005C56A3 /* AddDogs.storyboard */; };
+		54EB8F401FDCFC11005C56A3 /* AddEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EB8F3F1FDCFC11005C56A3 /* AddEventsViewController.swift */; };
+		54F15B8A1FDD3F6D00E37132 /* NotificationsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F15B891FDD3F6D00E37132 /* NotificationsItem.swift */; };
+		54F15B8C1FDD3F9000E37132 /* NotificationsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F15B8B1FDD3F9000E37132 /* NotificationsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		543EC4951FE03F76005F848B /* SpeciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesViewController.swift; sourceTree = "<group>"; };
+		543FA4EB1FDE881400C35798 /* SelectedDogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDogsViewController.swift; sourceTree = "<group>"; };
+		543FA4ED1FDE884300C35798 /* SelectedDogsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDogsCell.swift; sourceTree = "<group>"; };
+		5446275B1FDFD49F003130B1 /* ClinicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicViewController.swift; sourceTree = "<group>"; };
+		5446275D1FDFD4CF003130B1 /* AddClinicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClinicViewController.swift; sourceTree = "<group>"; };
+		546C9BCA1FE097330029E158 /* bark.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bark.wav; sourceTree = "<group>"; };
 		54BD253B1FDC36C800B176E7 /* Vdog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vdog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54BD253E1FDC36C800B176E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		54BD25401FDC36C800B176E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		54BD25431FDC36C800B176E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		54BD25461FDC36C800B176E7 /* Vdog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vdog.xcdatamodel; sourceTree = "<group>"; };
 		54BD25481FDC36C800B176E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54BD254B1FDC36C800B176E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54BD254D1FDC36C800B176E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54C6B0F51FDC39AF00E2DE81 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		54C6B0F81FDC3ADD00E2DE81 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		54C6B0FA1FDC3AE800E2DE81 /* Itim-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Itim-Regular.ttf"; sourceTree = "<group>"; };
+		54CC7C411FDD28B400F3FD78 /* Email.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Email.plist; sourceTree = "<group>"; };
+		54CE5DC21FDD4C8600754882 /* AddDogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDogsViewController.swift; sourceTree = "<group>"; };
+		54E39E6F1FDC425300DEC869 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		54E39E721FDC434400DEC869 /* IconApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconApp.png; sourceTree = "<group>"; };
+		54E5C4A01FDD8592009FA006 /* IconApp_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconApp_1024.png; sourceTree = "<group>"; };
+		54E5C4A21FDD9C54009FA006 /* EventsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsInfoViewController.swift; sourceTree = "<group>"; };
+		54E944E51FE04A5D005547A0 /* SpeciesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesCell.swift; sourceTree = "<group>"; };
+		54EB8F2D1FDC4A8C005C56A3 /* Events.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Events.storyboard; sourceTree = "<group>"; };
+		54EB8F2F1FDC4ACC005C56A3 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
+		54EB8F311FDC4D77005C56A3 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		54EB8F331FDC4DD3005C56A3 /* EventsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCell.swift; sourceTree = "<group>"; };
+		54EB8F351FDC56E0005C56A3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		54EB8F371FDC59F4005C56A3 /* DogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsViewController.swift; sourceTree = "<group>"; };
+		54EB8F391FDC5A04005C56A3 /* DogsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsCell.swift; sourceTree = "<group>"; };
+		54EB8F3B1FDC961B005C56A3 /* AddEvents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEvents.storyboard; sourceTree = "<group>"; };
+		54EB8F3D1FDC9628005C56A3 /* AddDogs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddDogs.storyboard; sourceTree = "<group>"; };
+		54EB8F3F1FDCFC11005C56A3 /* AddEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventsViewController.swift; sourceTree = "<group>"; };
+		54F15B891FDD3F6D00E37132 /* NotificationsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsItem.swift; sourceTree = "<group>"; };
+		54F15B8B1FDD3F9000E37132 /* NotificationsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsList.swift; sourceTree = "<group>"; };
+		6743A3EFFD939D9657D08CF8 /* Pods-Vdog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vdog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vdog/Pods-Vdog.debug.xcconfig"; sourceTree = "<group>"; };
+		BF7A8A0F1FC67111560D2CD4 /* Pods_Vdog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vdog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDA48FDCF12340D27DBF24C8 /* Pods-Vdog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vdog.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vdog/Pods-Vdog.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +87,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA85A8930E7A29D307C94B5 /* Pods_Vdog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		546C9BC91FE097290029E158 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				546C9BCA1FE097330029E158 /* bark.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		54BD25321FDC36C800B176E7 = {
 			isa = PBXGroup;
 			children = (
+				546C9BC91FE097290029E158 /* Sounds */,
+				54F15B881FDD3F4000E37132 /* Notifications */,
+				54E39E711FDC433600DEC869 /* Images */,
+				54C6B0F71FDC3AC600E2DE81 /* Controller */,
+				54C6B0F41FDC391800E2DE81 /* Storyboard */,
+				54C6B0F31FDC391300E2DE81 /* Fonts */,
+				54C6B0F21FDC390400E2DE81 /* CustomView */,
 				54BD253D1FDC36C800B176E7 /* Vdog */,
 				54BD253C1FDC36C800B176E7 /* Products */,
+				98589B6C2F80953090DCCA84 /* Pods */,
+				E1E28B8B956D5FDAB837DB68 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +131,98 @@
 			isa = PBXGroup;
 			children = (
 				54BD253E1FDC36C800B176E7 /* AppDelegate.swift */,
-				54BD25401FDC36C800B176E7 /* ViewController.swift */,
-				54BD25421FDC36C800B176E7 /* Main.storyboard */,
 				54BD25481FDC36C800B176E7 /* Assets.xcassets */,
 				54BD254A1FDC36C800B176E7 /* LaunchScreen.storyboard */,
 				54BD254D1FDC36C800B176E7 /* Info.plist */,
 				54BD25451FDC36C800B176E7 /* Vdog.xcdatamodeld */,
+				54CC7C411FDD28B400F3FD78 /* Email.plist */,
 			);
 			path = Vdog;
+			sourceTree = "<group>";
+		};
+		54C6B0F21FDC390400E2DE81 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				54E39E6F1FDC425300DEC869 /* Images.swift */,
+				54EB8F2F1FDC4ACC005C56A3 /* CustomTabbar.swift */,
+				54EB8F331FDC4DD3005C56A3 /* EventsCell.swift */,
+				54EB8F391FDC5A04005C56A3 /* DogsCell.swift */,
+				543FA4ED1FDE884300C35798 /* SelectedDogsCell.swift */,
+				54E944E51FE04A5D005547A0 /* SpeciesCell.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		54C6B0F31FDC391300E2DE81 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				54C6B0FA1FDC3AE800E2DE81 /* Itim-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		54C6B0F41FDC391800E2DE81 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				54C6B0F51FDC39AF00E2DE81 /* SignIn.storyboard */,
+				54EB8F2D1FDC4A8C005C56A3 /* Events.storyboard */,
+				54EB8F3B1FDC961B005C56A3 /* AddEvents.storyboard */,
+				54EB8F3D1FDC9628005C56A3 /* AddDogs.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		54C6B0F71FDC3AC600E2DE81 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				54C6B0F81FDC3ADD00E2DE81 /* SignInViewController.swift */,
+				54EB8F311FDC4D77005C56A3 /* EventsViewController.swift */,
+				54EB8F351FDC56E0005C56A3 /* SettingsViewController.swift */,
+				54EB8F371FDC59F4005C56A3 /* DogsViewController.swift */,
+				54EB8F3F1FDCFC11005C56A3 /* AddEventsViewController.swift */,
+				54CE5DC21FDD4C8600754882 /* AddDogsViewController.swift */,
+				54E5C4A21FDD9C54009FA006 /* EventsInfoViewController.swift */,
+				543FA4EB1FDE881400C35798 /* SelectedDogsViewController.swift */,
+				5446275B1FDFD49F003130B1 /* ClinicViewController.swift */,
+				5446275D1FDFD4CF003130B1 /* AddClinicViewController.swift */,
+				543EC4951FE03F76005F848B /* SpeciesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		54E39E711FDC433600DEC869 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				54E39E721FDC434400DEC869 /* IconApp.png */,
+				54E5C4A01FDD8592009FA006 /* IconApp_1024.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		54F15B881FDD3F4000E37132 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				54F15B891FDD3F6D00E37132 /* NotificationsItem.swift */,
+				54F15B8B1FDD3F9000E37132 /* NotificationsList.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		98589B6C2F80953090DCCA84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6743A3EFFD939D9657D08CF8 /* Pods-Vdog.debug.xcconfig */,
+				FDA48FDCF12340D27DBF24C8 /* Pods-Vdog.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E1E28B8B956D5FDAB837DB68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF7A8A0F1FC67111560D2CD4 /* Pods_Vdog.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +232,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54BD25501FDC36C800B176E7 /* Build configuration list for PBXNativeTarget "Vdog" */;
 			buildPhases = (
+				62346C025AD7E6A9F75BD6A5 /* [CP] Check Pods Manifest.lock */,
 				54BD25371FDC36C800B176E7 /* Sources */,
 				54BD25381FDC36C800B176E7 /* Frameworks */,
 				54BD25391FDC36C800B176E7 /* Resources */,
+				7FDD594B927A8D430292593E /* [CP] Embed Pods Frameworks */,
+				E30238E23F2C18986BD74B34 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,36 +287,124 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54E39E731FDC434400DEC869 /* IconApp.png in Resources */,
+				546C9BCB1FE097330029E158 /* bark.wav in Resources */,
+				54E5C4A11FDD8592009FA006 /* IconApp_1024.png in Resources */,
 				54BD254C1FDC36C800B176E7 /* LaunchScreen.storyboard in Resources */,
+				54CC7C421FDD28B400F3FD78 /* Email.plist in Resources */,
+				54EB8F3C1FDC961B005C56A3 /* AddEvents.storyboard in Resources */,
+				54C6B0F61FDC39AF00E2DE81 /* SignIn.storyboard in Resources */,
+				54C6B0FB1FDC3AE800E2DE81 /* Itim-Regular.ttf in Resources */,
 				54BD25491FDC36C800B176E7 /* Assets.xcassets in Resources */,
-				54BD25441FDC36C800B176E7 /* Main.storyboard in Resources */,
+				54EB8F2E1FDC4A8C005C56A3 /* Events.storyboard in Resources */,
+				54EB8F3E1FDC9628005C56A3 /* AddDogs.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		62346C025AD7E6A9F75BD6A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Vdog-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FDD594B927A8D430292593E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Vdog/Pods-Vdog-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vdog/Pods-Vdog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E30238E23F2C18986BD74B34 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vdog/Pods-Vdog-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		54BD25371FDC36C800B176E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54BD25411FDC36C800B176E7 /* ViewController.swift in Sources */,
+				5446275C1FDFD49F003130B1 /* ClinicViewController.swift in Sources */,
+				54E944E61FE04A5D005547A0 /* SpeciesCell.swift in Sources */,
+				543FA4EC1FDE881500C35798 /* SelectedDogsViewController.swift in Sources */,
+				54EB8F401FDCFC11005C56A3 /* AddEventsViewController.swift in Sources */,
 				54BD253F1FDC36C800B176E7 /* AppDelegate.swift in Sources */,
+				54EB8F301FDC4ACC005C56A3 /* CustomTabbar.swift in Sources */,
+				54E39E701FDC425300DEC869 /* Images.swift in Sources */,
+				54EB8F341FDC4DD3005C56A3 /* EventsCell.swift in Sources */,
+				54CE5DC31FDD4C8600754882 /* AddDogsViewController.swift in Sources */,
+				54F15B8C1FDD3F9000E37132 /* NotificationsList.swift in Sources */,
 				54BD25471FDC36C800B176E7 /* Vdog.xcdatamodeld in Sources */,
+				54C6B0F91FDC3ADD00E2DE81 /* SignInViewController.swift in Sources */,
+				54F15B8A1FDD3F6D00E37132 /* NotificationsItem.swift in Sources */,
+				5446275E1FDFD4CF003130B1 /* AddClinicViewController.swift in Sources */,
+				543EC4961FE03F76005F848B /* SpeciesViewController.swift in Sources */,
+				54EB8F3A1FDC5A04005C56A3 /* DogsCell.swift in Sources */,
+				54EB8F321FDC4D77005C56A3 /* EventsViewController.swift in Sources */,
+				54EB8F381FDC59F4005C56A3 /* DogsViewController.swift in Sources */,
+				54E5C4A31FDD9C54009FA006 /* EventsInfoViewController.swift in Sources */,
+				54EB8F361FDC56E0005C56A3 /* SettingsViewController.swift in Sources */,
+				543FA4EE1FDE884300C35798 /* SelectedDogsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		54BD25421FDC36C800B176E7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				54BD25431FDC36C800B176E7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		54BD254A1FDC36C800B176E7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -276,31 +525,35 @@
 		};
 		54BD25511FDC36C800B176E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6743A3EFFD939D9657D08CF8 /* Pods-Vdog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2BUG7DVPG4;
 				INFOPLIST_FILE = Vdog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = devth.Vdog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		54BD25521FDC36C800B176E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDA48FDCF12340D27DBF24C8 /* Pods-Vdog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2BUG7DVPG4;
 				INFOPLIST_FILE = Vdog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = devth.Vdog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9nF-E7-Zgu">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Itim-Regular.ttf">
+            <string>Itim-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Sign In View Controller-->
+        <scene sceneID="akv-pV-Bjn">
+            <objects>
+                <viewController id="0Uv-Pw-jTT" customClass="SignInViewController" customModule="Vdog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VXx-WY-lSq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cun-RB-OoC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mF7-Vv-j0l">
+                                        <rect key="frame" x="18" y="684" width="340" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="340" id="ebX-mF-VQY"/>
+                                            <constraint firstAttribute="height" constant="48" id="nRm-r2-bMD"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="mQ6-s1-HJo"/>
+                                        <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                        <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="สมัครสมาชิกด้วยอีเมล" image="email">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ef-Ug-LiP">
+                                        <rect key="frame" x="18" y="631" width="340" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="340" id="0D9-2u-UdV"/>
+                                            <constraint firstAttribute="height" constant="48" id="fc9-ZC-38S"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="Ueg-vk-o2c"/>
+                                        <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="สมัครสมาชิกด้วย Facebook" image="facebook">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SignInFacebook:" destination="0Uv-Pw-jTT" eventType="touchUpInside" id="8WN-IN-h0b"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="กรอกรหัสผ่าน" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DXb-66-Abk">
+                                        <rect key="frame" x="18" y="385" width="340" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="GkF-Pd-pWs"/>
+                                            <constraint firstAttribute="width" constant="340" id="smH-PF-Pdh"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="QZF-5p-aDr"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="กรอกอีเมล" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DPg-KI-GaK">
+                                        <rect key="frame" x="18" y="332" width="340" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="nOt-3S-ebs"/>
+                                            <constraint firstAttribute="width" constant="340" id="ocI-TG-3JT"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="uhw-W3-dex"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiN-eT-AGM">
+                                        <rect key="frame" x="18" y="453" width="340" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="340" id="Vhr-nm-adu"/>
+                                            <constraint firstAttribute="height" constant="48" id="ep4-XA-XDH"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="Yp6-Rb-FKn"/>
+                                        <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                        <state key="normal" title="เข้าสู่ระบบ">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SignInAction:" destination="0Uv-Pw-jTT" eventType="touchUpInside" id="K98-dG-8Qk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uH-TZ-fmv">
+                                        <rect key="frame" x="18" y="506" width="340" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="6pP-Ug-J9p"/>
+                                            <constraint firstAttribute="width" constant="340" id="dge-LR-byQ"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="gGr-Wb-ac1"/>
+                                        <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                        <state key="normal" title="คุณลืมรหัสผ่านใช่ไหม ?">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เข้าสู่ระบบด้วยอีเมลที่สมัครไว้" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJG-L9-4Mw">
+                                        <rect key="frame" x="18" y="264" width="340" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="340" id="Foy-st-f5z"/>
+                                            <constraint firstAttribute="height" constant="48" id="zi0-ax-3df"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="หากคุณยังไม่ได้เป็นสมาชิก" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DN6-pe-91C">
+                                        <rect key="frame" x="18" y="589" width="340" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="340" id="7Ni-sa-zvR"/>
+                                            <constraint firstAttribute="height" constant="32" id="jee-il-5cY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.5490196078431373" green="0.6705882352941176" blue="0.6470588235294118" alpha="0.69844285102739723" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="DXb-66-Abk" firstAttribute="leading" secondItem="24r-c9-iVk" secondAttribute="leading" constant="18" id="2bv-NS-1ir"/>
+                                    <constraint firstItem="mF7-Vv-j0l" firstAttribute="top" secondItem="9ef-Ug-LiP" secondAttribute="bottom" constant="5" id="58s-ac-Eib"/>
+                                    <constraint firstItem="0uH-TZ-fmv" firstAttribute="leading" secondItem="24r-c9-iVk" secondAttribute="leading" constant="18" id="5ce-hK-7mK"/>
+                                    <constraint firstItem="9ef-Ug-LiP" firstAttribute="top" secondItem="DN6-pe-91C" secondAttribute="bottom" constant="10" id="8WF-jy-Zkj"/>
+                                    <constraint firstItem="0uH-TZ-fmv" firstAttribute="top" secondItem="BiN-eT-AGM" secondAttribute="bottom" constant="5" id="90G-ha-gjE"/>
+                                    <constraint firstItem="24r-c9-iVk" firstAttribute="trailing" secondItem="BiN-eT-AGM" secondAttribute="trailing" constant="17" id="Bx3-37-lg4"/>
+                                    <constraint firstItem="9ef-Ug-LiP" firstAttribute="leading" secondItem="24r-c9-iVk" secondAttribute="leading" constant="18" id="Fy2-SI-cYQ"/>
+                                    <constraint firstItem="24r-c9-iVk" firstAttribute="trailing" secondItem="LJG-L9-4Mw" secondAttribute="trailing" constant="17" id="WeN-Dx-JbU"/>
+                                    <constraint firstItem="BiN-eT-AGM" firstAttribute="top" secondItem="DXb-66-Abk" secondAttribute="bottom" constant="20" id="XU5-F8-fm3"/>
+                                    <constraint firstItem="24r-c9-iVk" firstAttribute="trailing" secondItem="DN6-pe-91C" secondAttribute="trailing" constant="17" id="bcn-S1-E16"/>
+                                    <constraint firstItem="24r-c9-iVk" firstAttribute="trailing" secondItem="9ef-Ug-LiP" secondAttribute="trailing" constant="17" id="euo-Ny-1Ag"/>
+                                    <constraint firstItem="BiN-eT-AGM" firstAttribute="leading" secondItem="24r-c9-iVk" secondAttribute="leading" constant="18" id="gzm-Ym-aJr"/>
+                                    <constraint firstItem="LJG-L9-4Mw" firstAttribute="leading" secondItem="24r-c9-iVk" secondAttribute="leading" constant="18" id="hwA-eU-rPw"/>
+                                    <constraint firstItem="mF7-Vv-j0l" firstAttribute="leading" secondItem="24r-c9-iVk" secondAttribute="leading" constant="18" id="isK-pO-5fm"/>
+                                    <constraint firstItem="DXb-66-Abk" firstAttribute="top" secondItem="DPg-KI-GaK" secondAttribute="bottom" constant="5" id="mzl-Df-uzs"/>
+                                    <constraint firstItem="24r-c9-iVk" firstAttribute="trailing" secondItem="DXb-66-Abk" secondAttribute="trailing" constant="17" id="n2u-P8-HWz"/>
+                                    <constraint firstItem="24r-c9-iVk" firstAttribute="trailing" secondItem="mF7-Vv-j0l" secondAttribute="trailing" constant="17" id="nDM-Sd-fkg"/>
+                                    <constraint firstItem="24r-c9-iVk" firstAttribute="bottom" secondItem="mF7-Vv-j0l" secondAttribute="bottom" constant="46" id="qRl-rQ-pgu"/>
+                                    <constraint firstItem="24r-c9-iVk" firstAttribute="trailing" secondItem="DPg-KI-GaK" secondAttribute="trailing" constant="17" id="rws-JW-SG6"/>
+                                    <constraint firstItem="24r-c9-iVk" firstAttribute="trailing" secondItem="0uH-TZ-fmv" secondAttribute="trailing" constant="17" id="tQu-G3-zTa"/>
+                                    <constraint firstItem="DN6-pe-91C" firstAttribute="leading" secondItem="24r-c9-iVk" secondAttribute="leading" constant="18" id="vuf-mJ-tbp"/>
+                                    <constraint firstItem="DPg-KI-GaK" firstAttribute="top" secondItem="LJG-L9-4Mw" secondAttribute="bottom" constant="20" id="xgi-DE-mxb"/>
+                                    <constraint firstItem="DN6-pe-91C" firstAttribute="top" secondItem="0uH-TZ-fmv" secondAttribute="bottom" constant="35" id="yeG-bj-2xa"/>
+                                    <constraint firstItem="DPg-KI-GaK" firstAttribute="leading" secondItem="24r-c9-iVk" secondAttribute="leading" constant="18" id="yuZ-Jm-gYL"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="24r-c9-iVk"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Cun-RB-OoC" firstAttribute="leading" secondItem="oYw-qU-h5O" secondAttribute="leading" id="7LU-XF-obd"/>
+                            <constraint firstItem="Cun-RB-OoC" firstAttribute="trailing" secondItem="oYw-qU-h5O" secondAttribute="trailing" id="G8a-hb-04W"/>
+                            <constraint firstItem="Cun-RB-OoC" firstAttribute="top" secondItem="VXx-WY-lSq" secondAttribute="top" id="HQK-pt-fTQ"/>
+                            <constraint firstAttribute="bottom" secondItem="Cun-RB-OoC" secondAttribute="bottom" id="h3F-eY-Qm4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oYw-qU-h5O"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tQH-qq-jzU"/>
+                    <connections>
+                        <outlet property="FacebookLogin" destination="9ef-Ug-LiP" id="icd-N3-dwL"/>
+                        <outlet property="TextInputEmail" destination="DPg-KI-GaK" id="CBi-ZU-mCD"/>
+                        <outlet property="TextInputPassword" destination="DXb-66-Abk" id="PLq-cW-mvQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ofj-tF-VrQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="228.32512315270938"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="b4f-mG-dOU">
+            <objects>
+                <navigationController storyboardIdentifier="SignInView" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="9nF-E7-Zgu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Aio-2n-TLK">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0Uv-Pw-jTT" kind="relationship" relationship="rootViewController" id="wfg-Ay-XR5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fFV-Ve-RIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-393" y="229"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="email" width="32" height="32"/>
+        <image name="facebook" width="24" height="24"/>
+    </resources>
+</document>

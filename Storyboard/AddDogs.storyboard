@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XoR-2i-m7B">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Itim-Regular.ttf">
+            <string>Itim-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="lMX-di-PnB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XoR-2i-m7B" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="uL0-kY-1a1">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GaK-tl-aJ7" kind="relationship" relationship="rootViewController" id="Nnl-eO-Umo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dVd-8b-BbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-398" y="77"/>
+        </scene>
+        <!--เพิ่มสุนัขของฉัน-->
+        <scene sceneID="QEk-p5-Sgq">
+            <objects>
+                <tableViewController storyboardIdentifier="AddDogs" id="GaK-tl-aJ7" customClass="AddDogsViewController" customModule="Vdog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="0gp-mf-ZaA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="eLQ-H8-ndV">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เพิ่มสุนัขใหม่" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9U-xy-1qw">
+                                    <rect key="frame" x="18" y="28" width="340" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="340" id="exU-y9-4Pa"/>
+                                        <constraint firstAttribute="height" constant="48" id="sIv-2C-qm7"/>
+                                    </constraints>
+                                    <viewLayoutGuide key="safeArea" id="tHd-Ez-khQ"/>
+                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="28"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*กรุณากรอกข้อมูลให้ครบถ้วน" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aoy-Y8-SNg">
+                                    <rect key="frame" x="18" y="64" width="340" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="Jco-Yg-waf"/>
+                                        <constraint firstAttribute="width" constant="340" id="K23-Il-Lk4"/>
+                                    </constraints>
+                                    <viewLayoutGuide key="safeArea" id="uXI-Do-CFf"/>
+                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="20"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconApp_1024.png" translatesAutoresizingMaskIntoConstraints="NO" id="hXs-qK-8az">
+                                    <rect key="frame" x="128" y="112" width="120" height="120"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="120" id="CT6-lc-Vrd"/>
+                                        <constraint firstAttribute="height" constant="120" id="qLY-Ay-cP8"/>
+                                    </constraints>
+                                    <viewLayoutGuide key="safeArea" id="H8Y-Wv-mqY"/>
+                                </imageView>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ4-vs-cg8">
+                                    <rect key="frame" x="128" y="112" width="120" height="120"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="120" id="lG2-Bc-S8W"/>
+                                        <constraint firstAttribute="width" constant="120" id="ner-hY-tEA"/>
+                                    </constraints>
+                                    <viewLayoutGuide key="safeArea" id="kS6-nr-3ot"/>
+                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                    <connections>
+                                        <action selector="SelectedPhotos:" destination="GaK-tl-aJ7" eventType="touchUpInside" id="pGx-zn-lNO"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="hXs-qK-8az" firstAttribute="top" secondItem="Aoy-Y8-SNg" secondAttribute="bottom" id="6Pn-Tv-taU"/>
+                                <constraint firstItem="O9U-xy-1qw" firstAttribute="top" secondItem="eLQ-H8-ndV" secondAttribute="top" constant="28" id="7YG-nW-0si"/>
+                                <constraint firstItem="hXs-qK-8az" firstAttribute="leading" secondItem="eLQ-H8-ndV" secondAttribute="leading" constant="128" id="KOE-eb-5jk"/>
+                                <constraint firstAttribute="bottom" secondItem="hXs-qK-8az" secondAttribute="bottom" constant="8" id="PbG-Di-Az5"/>
+                                <constraint firstItem="Aoy-Y8-SNg" firstAttribute="leading" secondItem="eLQ-H8-ndV" secondAttribute="leading" constant="18" id="Tpm-Yt-4Xb"/>
+                                <constraint firstItem="ZJ4-vs-cg8" firstAttribute="leading" secondItem="eLQ-H8-ndV" secondAttribute="leading" constant="128" id="hUX-Nd-bKB"/>
+                                <constraint firstItem="ZJ4-vs-cg8" firstAttribute="top" secondItem="Aoy-Y8-SNg" secondAttribute="bottom" id="hXS-jh-snK"/>
+                                <constraint firstAttribute="trailing" secondItem="ZJ4-vs-cg8" secondAttribute="trailing" constant="127" id="jZk-iD-zKK"/>
+                                <constraint firstItem="Aoy-Y8-SNg" firstAttribute="top" secondItem="eLQ-H8-ndV" secondAttribute="top" constant="64" id="kDH-G9-GdC"/>
+                                <constraint firstItem="O9U-xy-1qw" firstAttribute="leading" secondItem="eLQ-H8-ndV" secondAttribute="leading" constant="18" id="oLI-33-hw2"/>
+                                <constraint firstAttribute="trailing" secondItem="O9U-xy-1qw" secondAttribute="trailing" constant="17" id="ou0-va-zrC"/>
+                                <constraint firstAttribute="trailing" secondItem="Aoy-Y8-SNg" secondAttribute="trailing" constant="17" id="r3v-5B-7uN"/>
+                                <constraint firstAttribute="bottom" secondItem="ZJ4-vs-cg8" secondAttribute="bottom" constant="8" id="rov-eg-idh"/>
+                                <constraint firstAttribute="trailing" secondItem="hXs-qK-8az" secondAttribute="trailing" constant="127" id="skx-XD-5BD"/>
+                            </constraints>
+                        </view>
+                        <sections>
+                            <tableViewSection headerTitle="ชื่อสุนัข" id="INC-gw-S8J">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="YOj-Kp-H1Y">
+                                        <rect key="frame" x="0.0" y="295.33333333333331" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YOj-Kp-H1Y" id="mEb-kG-sgJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="กรอกชื่อสุนัข" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bi6-se-dij">
+                                                    <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="Mam-2i-U7o"/>
+                                                        <constraint firstAttribute="width" constant="340" id="iOa-i4-r4L"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="bi6-se-dij" secondAttribute="bottom" constant="16" id="16b-kE-FLH"/>
+                                                <constraint firstItem="bi6-se-dij" firstAttribute="top" secondItem="mEb-kG-sgJ" secondAttribute="top" constant="16" id="FJC-z8-3gi"/>
+                                                <constraint firstAttribute="trailing" secondItem="bi6-se-dij" secondAttribute="trailing" constant="17" id="f9A-Sq-3iy"/>
+                                                <constraint firstItem="bi6-se-dij" firstAttribute="leading" secondItem="mEb-kG-sgJ" secondAttribute="leading" constant="18" id="vuJ-58-HYg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="เลือกวันเกิดสุนัข" footerTitle="ตัวอย่าง: 1 ธันวาคม 2010" id="LQA-Q4-KSd">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="KK2-a4-2eZ">
+                                        <rect key="frame" x="0.0" y="438" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KK2-a4-2eZ" id="DU9-Ma-da1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="วัน/เดือน/ปี เกิด" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H47-nA-d5c">
+                                                    <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="6xT-UL-g4G"/>
+                                                        <constraint firstAttribute="width" constant="340" id="vEr-wl-vvF"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="H47-nA-d5c" firstAttribute="top" secondItem="DU9-Ma-da1" secondAttribute="top" constant="16" id="DHZ-vi-Ems"/>
+                                                <constraint firstItem="H47-nA-d5c" firstAttribute="leading" secondItem="DU9-Ma-da1" secondAttribute="leading" constant="18" id="Ja8-yM-a3v"/>
+                                                <constraint firstAttribute="bottom" secondItem="H47-nA-d5c" secondAttribute="bottom" constant="16" id="tmx-hC-gd4"/>
+                                                <constraint firstAttribute="trailing" secondItem="H47-nA-d5c" secondAttribute="trailing" constant="17" id="wjS-yl-4tc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="เลือกเพศสุนัข" id="cfO-bf-FKX">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="bVJ-nj-kXe">
+                                        <rect key="frame" x="0.0" y="586" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bVJ-nj-kXe" id="wGQ-Zk-rOK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เลือกเพศสุนัข" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pLD-kp-Tiw">
+                                                    <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="340" id="Dd6-tw-Qjk"/>
+                                                        <constraint firstAttribute="height" constant="48" id="QPV-an-gn1"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pLD-kp-Tiw" firstAttribute="top" secondItem="wGQ-Zk-rOK" secondAttribute="top" constant="16" id="5ZU-df-pCG"/>
+                                                <constraint firstAttribute="trailing" secondItem="pLD-kp-Tiw" secondAttribute="trailing" constant="17" id="7en-68-MBb"/>
+                                                <constraint firstAttribute="bottom" secondItem="pLD-kp-Tiw" secondAttribute="bottom" constant="16" id="eaN-14-TZf"/>
+                                                <constraint firstItem="pLD-kp-Tiw" firstAttribute="leading" secondItem="wGQ-Zk-rOK" secondAttribute="leading" constant="18" id="hGB-8T-jZU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="เลือกพันธุ์สุนัข" id="puK-KU-PXi">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="Syt-jH-qau">
+                                        <rect key="frame" x="0.0" y="721.33333333333337" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Syt-jH-qau" id="QOh-qk-g4i">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เลือกพันธุ์สุนัข" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ewd-da-cCS">
+                                                    <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="340" id="UW8-Cq-6Ho"/>
+                                                        <constraint firstAttribute="height" constant="48" id="vmg-p8-xqM"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWi-68-T9u">
+                                                    <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="B5Q-HV-WRC"/>
+                                                        <constraint firstAttribute="width" constant="340" id="S9s-d2-53i"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="17"/>
+                                                    <connections>
+                                                        <segue destination="xtd-Su-76g" kind="push" identifier="SelectedSpecies" id="9Df-oE-lgv"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ewd-da-cCS" firstAttribute="leading" secondItem="QOh-qk-g4i" secondAttribute="leading" constant="18" id="1P7-a9-TWG"/>
+                                                <constraint firstItem="oWi-68-T9u" firstAttribute="top" secondItem="QOh-qk-g4i" secondAttribute="top" constant="16" id="IrV-tH-ueu"/>
+                                                <constraint firstItem="Ewd-da-cCS" firstAttribute="top" secondItem="QOh-qk-g4i" secondAttribute="top" constant="16" id="YpY-N6-JRS"/>
+                                                <constraint firstItem="oWi-68-T9u" firstAttribute="leading" secondItem="QOh-qk-g4i" secondAttribute="leading" constant="18" id="eeo-Sq-8xn"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ewd-da-cCS" secondAttribute="bottom" constant="16" id="lni-Pe-0wv"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ewd-da-cCS" secondAttribute="trailing" constant="17" id="ozj-80-UCz"/>
+                                                <constraint firstAttribute="trailing" secondItem="oWi-68-T9u" secondAttribute="trailing" constant="17" id="rRy-tV-Nyt"/>
+                                                <constraint firstAttribute="bottom" secondItem="oWi-68-T9u" secondAttribute="bottom" constant="16" id="spY-Bi-apJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="ระบุน้ำหนักสุนัข" id="xRz-bE-FK1">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="oCu-D0-aNf">
+                                        <rect key="frame" x="0.0" y="856.66666666666674" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oCu-D0-aNf" id="D7q-kE-WRr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ระบุน้ำหนักสุนัข" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="u1i-ZP-WlQ">
+                                                    <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="340" id="OpU-1U-D4C"/>
+                                                        <constraint firstAttribute="height" constant="48" id="Xd6-AZ-MDe"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="u1i-ZP-WlQ" secondAttribute="bottom" constant="16" id="2VV-1z-fq2"/>
+                                                <constraint firstItem="u1i-ZP-WlQ" firstAttribute="top" secondItem="D7q-kE-WRr" secondAttribute="top" constant="16" id="3Fq-HK-O92"/>
+                                                <constraint firstItem="u1i-ZP-WlQ" firstAttribute="leading" secondItem="D7q-kE-WRr" secondAttribute="leading" constant="18" id="3zE-RO-FFh"/>
+                                                <constraint firstAttribute="trailing" secondItem="u1i-ZP-WlQ" secondAttribute="trailing" constant="17" id="YWg-SE-GF6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="เลือกกรุ๊ปเลือด" id="KhX-sG-4y2">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="I6D-vW-zxK">
+                                        <rect key="frame" x="0.0" y="992.00000000000011" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I6D-vW-zxK" id="1Pj-zh-4pq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เลือกกรุ๊ปเลือด" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1Vq-wK-haH">
+                                                    <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="H2c-DP-Ll1"/>
+                                                        <constraint firstAttribute="width" constant="340" id="pHN-Qt-Jdz"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1Vq-wK-haH" firstAttribute="top" secondItem="1Pj-zh-4pq" secondAttribute="top" constant="16" id="2OO-FP-ggv"/>
+                                                <constraint firstItem="1Vq-wK-haH" firstAttribute="leading" secondItem="1Pj-zh-4pq" secondAttribute="leading" constant="18" id="MDq-Zc-Xvf"/>
+                                                <constraint firstAttribute="trailing" secondItem="1Vq-wK-haH" secondAttribute="trailing" constant="17" id="aJV-8b-aiR"/>
+                                                <constraint firstAttribute="bottom" secondItem="1Vq-wK-haH" secondAttribute="bottom" constant="16" id="lgL-c8-Ego"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="GaK-tl-aJ7" id="91w-ac-oxg"/>
+                            <outlet property="delegate" destination="GaK-tl-aJ7" id="eNf-6K-quC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="เพิ่มสุนัขของฉัน" id="JF4-Bo-RoL">
+                        <barButtonItem key="rightBarButtonItem" image="checkmark" id="mLs-hB-8k8">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="AddDogs:" destination="GaK-tl-aJ7" id="vWt-iC-eb0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="DogImages" destination="hXs-qK-8az" id="mga-Af-8TO"/>
+                        <outlet property="TextInputBlood" destination="1Vq-wK-haH" id="PPK-tM-AFH"/>
+                        <outlet property="TextInputDate" destination="H47-nA-d5c" id="Rhj-vr-fys"/>
+                        <outlet property="TextInputGender" destination="pLD-kp-Tiw" id="Zx3-0E-3I9"/>
+                        <outlet property="TextInputName" destination="bi6-se-dij" id="MtN-Dr-t53"/>
+                        <outlet property="TextInputType" destination="Ewd-da-cCS" id="bdR-LS-YY7"/>
+                        <outlet property="TextInputWeight" destination="u1i-ZP-WlQ" id="0eY-8f-Ppj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1X7-KZ-OTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="532" y="76.847290640394093"/>
+        </scene>
+        <!--เลือกพันธุ์สุนัข-->
+        <scene sceneID="GgD-Da-hhA">
+            <objects>
+                <tableViewController id="xtd-Su-76g" customClass="SpeciesViewController" customModule="Vdog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZSm-iE-lPW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="eTF-zY-Q1W" customClass="SpeciesCell" customModule="Vdog" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eTF-zY-Q1W" id="W52-6S-nCk">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.666666666666671"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="แสดงพันธุ์สุนัข" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihR-dB-jMW">
+                                            <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="48" id="2D9-bg-i9Z"/>
+                                                <constraint firstAttribute="width" constant="340" id="lDH-Vk-zLS"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="20"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ihR-dB-jMW" firstAttribute="top" secondItem="W52-6S-nCk" secondAttribute="top" constant="16" id="5DB-AM-xNk"/>
+                                        <constraint firstItem="ihR-dB-jMW" firstAttribute="leading" secondItem="W52-6S-nCk" secondAttribute="leading" constant="18" id="CfQ-Gm-Xtb"/>
+                                        <constraint firstAttribute="trailing" secondItem="ihR-dB-jMW" secondAttribute="trailing" constant="17" id="FxZ-1D-8cx"/>
+                                        <constraint firstAttribute="bottom" secondItem="ihR-dB-jMW" secondAttribute="bottom" constant="15.67" id="OMk-gH-ZRD"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="SpeciesName" destination="ihR-dB-jMW" id="DTS-zJ-0De"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xtd-Su-76g" id="eK2-wg-2F7"/>
+                            <outlet property="delegate" destination="xtd-Su-76g" id="ZgA-oh-bT1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="เลือกพันธุ์สุนัข" id="cIU-ap-pxm"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9yS-1J-2TK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2733.5999999999999" y="76.847290640394093"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pS5-fN-0gB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8de-la-LZk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Gw8-kg-6Wk">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xtd-Su-76g" kind="relationship" relationship="rootViewController" id="MC3-IP-yke"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gzj-GX-Vj4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1788" y="77"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="IconApp_1024.png" width="1024" height="1024"/>
+        <image name="checkmark" width="32" height="32"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="9Df-oE-lgv"/>
+    </inferredMetricsTieBreakers>
+</document>

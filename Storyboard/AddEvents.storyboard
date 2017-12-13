@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8MZ-UX-D0j">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Itim-Regular.ttf">
+            <string>Itim-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--เพิ่มนัดหมาย-->
+        <scene sceneID="YES-7v-NAU">
+            <objects>
+                <tableViewController storyboardIdentifier="AddEvents" id="Hzc-kj-JXL" customClass="AddEventsViewController" customModule="Vdog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="xv8-g3-m0u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="9eh-e8-0Sy">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เพิ่มนัดหมายใหม่" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyY-UA-V6n">
+                                    <rect key="frame" x="18" y="28" width="340" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="340" id="WXh-mh-1fJ"/>
+                                        <constraint firstAttribute="height" constant="48" id="gfw-Ys-59R"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="28"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*กรุณากรอกข้อมูลให้ครบถ้วน" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anN-f0-YLE">
+                                    <rect key="frame" x="18" y="64" width="340" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="Qu0-Lq-Zqx"/>
+                                        <constraint firstAttribute="width" constant="340" id="eLA-tF-TCA"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="20"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="GyY-UA-V6n" firstAttribute="top" secondItem="9eh-e8-0Sy" secondAttribute="top" constant="28" id="2H1-KB-uYQ"/>
+                                <constraint firstAttribute="trailing" secondItem="anN-f0-YLE" secondAttribute="trailing" constant="17" id="Col-5L-l3i"/>
+                                <constraint firstItem="anN-f0-YLE" firstAttribute="leading" secondItem="9eh-e8-0Sy" secondAttribute="leading" constant="18" id="ESv-jD-yPa"/>
+                                <constraint firstItem="anN-f0-YLE" firstAttribute="top" secondItem="9eh-e8-0Sy" secondAttribute="top" constant="64" id="kkz-70-Maj"/>
+                                <constraint firstItem="GyY-UA-V6n" firstAttribute="leading" secondItem="9eh-e8-0Sy" secondAttribute="leading" constant="18" id="nwP-i9-lNQ"/>
+                                <constraint firstAttribute="trailing" secondItem="GyY-UA-V6n" secondAttribute="trailing" constant="17" id="puP-ns-7dP"/>
+                            </constraints>
+                        </view>
+                        <sections>
+                            <tableViewSection headerTitle="หัวข้อนัดหมาย" footerTitle="ตัวอย่าง: กำหนดฉีดวัคซีนโรคพิษสุนัขบ้า" id="0F8-U1-Qev">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="kR8-It-5H2">
+                                        <rect key="frame" x="0.0" y="175.33333333333334" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kR8-It-5H2" id="73u-OW-HfN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="กรอกหัวข้อนัดหมาย" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wjo-xr-0Xj">
+                                                    <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="340" id="7B0-2l-0oU"/>
+                                                        <constraint firstAttribute="height" constant="48" id="Y9Y-tS-dmy"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="wjo-xr-0Xj" secondAttribute="bottom" constant="15.67" id="0wZ-Sx-eMZ"/>
+                                                <constraint firstItem="wjo-xr-0Xj" firstAttribute="leading" secondItem="73u-OW-HfN" secondAttribute="leading" constant="18" id="ZIQ-Kj-yeb"/>
+                                                <constraint firstItem="wjo-xr-0Xj" firstAttribute="top" secondItem="73u-OW-HfN" secondAttribute="top" constant="16" id="ceI-HY-lJm"/>
+                                                <constraint firstAttribute="trailing" secondItem="wjo-xr-0Xj" secondAttribute="trailing" constant="17" id="gqb-YS-jKq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="เลือกวันนัดหมาย" footerTitle="ตัวอย่าง: 12:00:00" id="PuP-ld-7WY">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="sKz-D8-frU">
+                                        <rect key="frame" x="0.0" y="330.66666666666669" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sKz-D8-frU" id="oqp-Dz-yNu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" เลือกวันนัดหมาย" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5mc-rr-wxC">
+                                                    <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="340" id="Ekk-bF-IWG"/>
+                                                        <constraint firstAttribute="height" constant="48" id="GKD-cS-odw"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="5mc-rr-wxC" secondAttribute="trailing" constant="17" id="1o2-KW-QX4"/>
+                                                <constraint firstAttribute="bottom" secondItem="5mc-rr-wxC" secondAttribute="bottom" constant="15.67" id="CCE-dw-E49"/>
+                                                <constraint firstItem="5mc-rr-wxC" firstAttribute="top" secondItem="oqp-Dz-yNu" secondAttribute="top" constant="16" id="eG7-QX-5A2"/>
+                                                <constraint firstItem="5mc-rr-wxC" firstAttribute="leading" secondItem="oqp-Dz-yNu" secondAttribute="leading" constant="18" id="u07-3L-G0J"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="Hnc-ed-v4b">
+                                        <rect key="frame" x="0.0" y="410.66666666666674" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hnc-ed-v4b" id="Bek-Pj-Sqk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" เลือกเวลานัดหมาย" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BRT-69-Mug">
+                                                    <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="9hh-C5-7j5"/>
+                                                        <constraint firstAttribute="width" constant="340" id="qhJ-IJ-ydb"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="BRT-69-Mug" firstAttribute="top" secondItem="Bek-Pj-Sqk" secondAttribute="top" constant="16" id="3hj-0x-EjZ"/>
+                                                <constraint firstItem="BRT-69-Mug" firstAttribute="leading" secondItem="Bek-Pj-Sqk" secondAttribute="leading" constant="18" id="Rgc-zp-IK8"/>
+                                                <constraint firstAttribute="trailing" secondItem="BRT-69-Mug" secondAttribute="trailing" constant="17" id="UpQ-WB-fXO"/>
+                                                <constraint firstAttribute="bottom" secondItem="BRT-69-Mug" secondAttribute="bottom" constant="15.67" id="i3X-jg-Q6S"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="เลือกสุนัขที่พาไปรักษา" id="rja-xy-oae">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="bPB-go-BrD">
+                                        <rect key="frame" x="0.0" y="558.66666666666674" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bPB-go-BrD" id="7w0-Ac-npp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เลือกสุนัข" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="a1K-sm-MP4">
+                                                    <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="340" id="cnK-aJ-jdy"/>
+                                                        <constraint firstAttribute="height" constant="48" id="yFF-Xu-mmV"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkH-eg-lSg">
+                                                    <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="Sfk-7J-1vS"/>
+                                                        <constraint firstAttribute="width" constant="340" id="bqN-Ge-65i"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="17"/>
+                                                    <connections>
+                                                        <segue destination="dMl-m9-foO" kind="push" identifier="SelectedDogs" id="m9v-g8-b71"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="LkH-eg-lSg" secondAttribute="trailing" constant="17" id="08s-cG-gbX"/>
+                                                <constraint firstAttribute="bottom" secondItem="LkH-eg-lSg" secondAttribute="bottom" constant="16" id="366-0P-WIA"/>
+                                                <constraint firstAttribute="bottom" secondItem="a1K-sm-MP4" secondAttribute="bottom" constant="16" id="Gal-Pg-MyC"/>
+                                                <constraint firstItem="LkH-eg-lSg" firstAttribute="top" secondItem="7w0-Ac-npp" secondAttribute="top" constant="16" id="YH7-RW-bHd"/>
+                                                <constraint firstItem="a1K-sm-MP4" firstAttribute="leading" secondItem="7w0-Ac-npp" secondAttribute="leading" constant="18" id="fhN-gi-siA"/>
+                                                <constraint firstItem="a1K-sm-MP4" firstAttribute="top" secondItem="7w0-Ac-npp" secondAttribute="top" constant="16" id="jf4-e5-dom"/>
+                                                <constraint firstAttribute="trailing" secondItem="a1K-sm-MP4" secondAttribute="trailing" constant="17" id="sFs-dA-q57"/>
+                                                <constraint firstItem="LkH-eg-lSg" firstAttribute="leading" secondItem="7w0-Ac-npp" secondAttribute="leading" constant="18" id="zJP-Jo-Hq9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="ระบุโรงพยาบาลหรือคลิกนิกที่นำไปรักษา" id="aq2-bq-Yeg">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="iK6-Bo-JIn">
+                                        <rect key="frame" x="0.0" y="694.00000000000011" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iK6-Bo-JIn" id="g2k-6B-VCr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ระบุชื่อคลินิก" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="n9o-px-O6R">
+                                                    <rect key="frame" x="18" y="16" width="340" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="8Fb-i7-wbE"/>
+                                                        <constraint firstAttribute="width" constant="340" id="xaq-9s-LXd"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="n9o-px-O6R" secondAttribute="bottom" constant="15.67" id="24W-ku-FaS"/>
+                                                <constraint firstItem="n9o-px-O6R" firstAttribute="leading" secondItem="g2k-6B-VCr" secondAttribute="leading" constant="18" id="h2B-cv-Z2u"/>
+                                                <constraint firstItem="n9o-px-O6R" firstAttribute="top" secondItem="g2k-6B-VCr" secondAttribute="top" constant="16" id="htK-9Y-e14"/>
+                                                <constraint firstAttribute="trailing" secondItem="n9o-px-O6R" secondAttribute="trailing" constant="17" id="wIw-c1-lLL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="ระบุรายละเอียดอื่นๆ" id="EIX-xj-tOQ">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="120" id="CDt-4t-10D">
+                                        <rect key="frame" x="0.0" y="829.33333333333348" width="375" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CDt-4t-10D" id="Ua7-XO-3wD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fpd-5g-9pS">
+                                                    <rect key="frame" x="18" y="10" width="340" height="100"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="7oX-Sf-c4p"/>
+                                                        <constraint firstAttribute="width" constant="340" id="HUd-BE-rZt"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Fpd-5g-9pS" firstAttribute="leading" secondItem="Ua7-XO-3wD" secondAttribute="leading" constant="18" id="Bkg-qc-vBW"/>
+                                                <constraint firstAttribute="bottom" secondItem="Fpd-5g-9pS" secondAttribute="bottom" constant="9.6699999999999999" id="IiG-fX-nvv"/>
+                                                <constraint firstItem="Fpd-5g-9pS" firstAttribute="top" secondItem="Ua7-XO-3wD" secondAttribute="top" constant="10" id="ZlJ-14-hRR"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fpd-5g-9pS" secondAttribute="trailing" constant="17" id="oSa-KY-iYV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Hzc-kj-JXL" id="ugq-rt-23T"/>
+                            <outlet property="delegate" destination="Hzc-kj-JXL" id="2Un-7R-Hek"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="เพิ่มนัดหมาย" id="ueG-6t-pqP">
+                        <barButtonItem key="rightBarButtonItem" image="checkmark" id="gCg-gH-ez5">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="AddEvents:" destination="Hzc-kj-JXL" id="MVk-85-xiW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="HeaderBackground" destination="9eh-e8-0Sy" id="x9h-qu-mOs"/>
+                        <outlet property="TextEventsDate" destination="5mc-rr-wxC" id="Dtd-vr-tRZ"/>
+                        <outlet property="TextEventsDetails" destination="Fpd-5g-9pS" id="h5L-PC-biE"/>
+                        <outlet property="TextEventsDogs" destination="a1K-sm-MP4" id="x6F-oR-N9C"/>
+                        <outlet property="TextEventsHospitalName" destination="n9o-px-O6R" id="LG6-TW-44W"/>
+                        <outlet property="TextEventsTime" destination="BRT-69-Mug" id="o1M-mT-JFU"/>
+                        <outlet property="TextEventsTitle" destination="wjo-xr-0Xj" id="qKB-ws-xyc"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="957-zv-PYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="328.80000000000001" y="76.847290640394093"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BdX-cX-bpx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8MZ-UX-D0j" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="fUE-Q4-ekN">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hzc-kj-JXL" kind="relationship" relationship="rootViewController" id="Grs-gs-wcE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o4K-Bh-7dZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-398" y="77"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wvw-QW-wgA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B56-pa-2Bi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="HT7-9s-KGF">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dMl-m9-foO" kind="relationship" relationship="rootViewController" id="9dn-Ys-j8T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XTE-tB-xsn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1298" y="77"/>
+        </scene>
+        <!--เลือกคลินิก-->
+        <scene sceneID="dz0-qg-0j9">
+            <objects>
+                <tableViewController id="hUR-Ha-su5" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UUO-vF-CYd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="jhO-de-Zdp" rowHeight="80" style="IBUITableViewCellStyleDefault" id="qVh-gg-Lm0">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qVh-gg-Lm0" id="9sS-mt-w77">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.666666666666671"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="แสดงชื่อคลินิก" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jhO-de-Zdp">
+                                            <rect key="frame" x="15" y="0.0" width="344" height="79.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hUR-Ha-su5" id="Mzf-4D-SYL"/>
+                            <outlet property="delegate" destination="hUR-Ha-su5" id="qw6-EF-wE2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="เลือกคลินิก" id="lY0-0S-Box"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qwc-C9-hKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1296.8" y="977.58620689655174"/>
+        </scene>
+        <!--สุนัขของฉัน-->
+        <scene sceneID="WhD-VX-O1w">
+            <objects>
+                <collectionViewController id="dMl-m9-foO" customClass="SelectedDogsViewController" customModule="Vdog" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="oUs-ZC-2K8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="AyS-tF-672"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="0.0" id="O71-Qx-vZs">
+                            <size key="itemSize" width="140" height="180"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Cell" id="qej-6i-aEg" customClass="SelectedDogsCell" customModule="Vdog" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fif-s0-3Hu">
+                                            <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconApp_1024.png" translatesAutoresizingMaskIntoConstraints="NO" id="de7-sG-VbP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <viewLayoutGuide key="safeArea" id="unm-dg-g4X"/>
+                                                </imageView>
+                                                <visualEffectView opaque="NO" alpha="0.87650001049041748" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cWN-HX-LTB">
+                                                    <rect key="frame" x="0.0" y="142" width="140" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="AUO-3s-aZo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="140" height="38"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ชื่อสุนัข" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSB-1t-aDs">
+                                                                <rect key="frame" x="0.0" y="0.0" width="140" height="38"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <viewLayoutGuide key="safeArea" id="jmb-xH-X74"/>
+                                                                <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="14"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </view>
+                                                    <viewLayoutGuide key="safeArea" id="rDg-Rb-scJ"/>
+                                                    <blurEffect style="extraLight"/>
+                                                </visualEffectView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <viewLayoutGuide key="safeArea" id="fNE-UH-riS"/>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <connections>
+                                    <outlet property="Background" destination="fif-s0-3Hu" id="0LX-hc-MX5"/>
+                                    <outlet property="DogName" destination="xSB-1t-aDs" id="dmb-jE-uYs"/>
+                                    <outlet property="FilterBackground" destination="cWN-HX-LTB" id="aIp-66-pxp"/>
+                                    <outlet property="Images" destination="de7-sG-VbP" id="Sk3-0q-A2X"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="dMl-m9-foO" id="m5v-eF-YPA"/>
+                            <outlet property="delegate" destination="dMl-m9-foO" id="hEC-QX-bMf"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="สุนัขของฉัน" id="3gb-sb-W4Y">
+                        <barButtonItem key="rightBarButtonItem" image="add" id="g1M-TR-8Ka">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="AddDogs:" destination="dMl-m9-foO" id="gIp-ee-o11"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="AlertMessage" destination="sks-Sp-fbp" id="n1S-Ck-b35"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3eB-51-pMq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="sks-Sp-fbp">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ยังไม่มีข้อมูลสุนัขกด + เพื่อเพิ่มสุนัข" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4R-t6-lGM">
+                            <rect key="frame" x="18" y="40" width="340" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="PjC-Hb-ZQj"/>
+                                <constraint firstAttribute="width" constant="340" id="uc1-l1-CGX"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="20"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="B4R-t6-lGM" firstAttribute="leading" secondItem="Ten-eM-31L" secondAttribute="leading" constant="18" id="OGU-M1-AEY"/>
+                        <constraint firstItem="B4R-t6-lGM" firstAttribute="top" secondItem="sks-Sp-fbp" secondAttribute="top" constant="40" id="kWB-aM-Twe"/>
+                        <constraint firstItem="Ten-eM-31L" firstAttribute="trailing" secondItem="B4R-t6-lGM" secondAttribute="trailing" constant="17" id="lGc-Vz-Zu7"/>
+                        <constraint firstItem="Ten-eM-31L" firstAttribute="bottom" secondItem="B4R-t6-lGM" secondAttribute="bottom" constant="6" id="qpO-c8-ciW"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="Ten-eM-31L"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="2060" y="77"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="D63-G9-3vy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QDK-V5-bml" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="haD-aE-gCl">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hUR-Ha-su5" kind="relationship" relationship="rootViewController" id="7h6-ly-Owi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XEF-VK-eul" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="329" y="978"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="IconApp_1024.png" width="1024" height="1024"/>
+        <image name="add" width="32" height="32"/>
+        <image name="checkmark" width="32" height="32"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="m9v-g8-b71"/>
+    </inferredMetricsTieBreakers>
+</document>

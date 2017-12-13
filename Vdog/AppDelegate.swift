@@ -8,21 +8,91 @@
 
 import UIKit
 import CoreData
+import FBSDKLoginKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var UserEmail: String = ""
+    var plistPathUser: String!
+    var plistPathInUser: String = String()
+    static let sharedInstance: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+
+        // LoadUserFirst
+        self.preparePlistUser()
+        let delegate = AppDelegate.sharedInstance
+        plistPathUser = delegate.plistPathInUser
+        do {
+            let loadUserEmail = try String(contentsOfFile: plistPathUser)
+            UserEmail = loadUserEmail
+        } catch {
+            print(error)
+        }
+        if UserEmail != "" {
+            let mainStoryBoard = UIStoryboard(name: "Events", bundle: nil)
+            let redViewController = mainStoryBoard.instantiateViewController(withIdentifier: "Controller")
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController = redViewController
+        } else {
+            let mainStoryBoard = UIStoryboard(name: "SignIn", bundle: nil)
+            let redViewController = mainStoryBoard.instantiateViewController(withIdentifier: "SignInView")
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController = redViewController
+        }
+        // Register Notifications
+        application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil))
+        // Start Application
+        /*let mainStoryBoard = UIStoryboard(name: "SignIn", bundle: nil)
+        let viewController = mainStoryBoard.instantiateViewController(withIdentifier: "SignInView") as! SignInViewController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = viewController*/
+        // Set Back Icon NavigationController
+        let backArrowImage = #imageLiteral(resourceName: "arrow-left")
+        let renderedImage = backArrowImage.withRenderingMode(.automatic)
+        UINavigationBar.appearance().backIndicatorImage = renderedImage
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = renderedImage
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), for:UIBarMetrics.default)
+        // Set Font NavigationController
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Itim-Regular", size: 18)!,NSAttributedStringKey.foregroundColor : UIColor.white]
+        // Set NavigationController Color
+        UINavigationBar.appearance().tintColor = UIColor.white
+        // Set NavigationController Border Color
+        UINavigationBar.appearance().shadowImage = UIImage.imageWithColor(color: UIColor(red:140.0/255.0, green:171.0/255.0, blue:165.0/255.0, alpha:1))
+        // Set NavigationController Background Color
+        UINavigationBar.appearance().setBackgroundImage(UIImage.imageWithColor(color: UIColor(red:140.0/255.0, green:171.0/255.0, blue:165.0/255.0, alpha:1)), for: .default)
+        // Set StatusBarStyle
+        UIApplication.shared.statusBarStyle = .lightContent
+        //let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+        //statusBar.backgroundColor = UIColor(red:18.0/255.0, green:61.0/255.0, blue:109.0/255.0, alpha:1)
+        
+        // Facebook
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+    }
+    
+    func preparePlistUser(){
+        let rootPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, .userDomainMask, true)[0]
+        plistPathInUser = rootPath + "/Email.plist"
+        if !FileManager.default.fileExists(atPath: plistPathInUser) {
+            let plistPathInBundle = Bundle.main.path(forResource: "Email", ofType: "plist") as String!
+            do {
+                try FileManager.default.copyItem(atPath: plistPathInBundle!, toPath: plistPathInUser)
+            }catch{
+                print(error)
+            }
+        }
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        FBSDKAppEvents.activateApp()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -35,7 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        self.preparePlistUser()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -87,6 +157,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    // Func isValidEmailAddress
+    
+    static func isValidEmailAddress(emailAddressString: String) -> Bool {
+        
+        var returnValue = true
+        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
+        
+        do {
+            let regex = try NSRegularExpression(pattern: emailRegEx)
+            let nsString = emailAddressString as NSString
+            let results = regex.matches(in: emailAddressString, range: NSRange(location: 0, length: nsString.length))
+            
+            if results.count == 0
+            {
+                returnValue = false
+            }
+            
+        } catch let error as NSError {
+            print("invalid regex: \(error.localizedDescription)")
+            returnValue = false
+        }
+        
+        return  returnValue
     }
 
 }
