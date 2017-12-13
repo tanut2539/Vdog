@@ -39,9 +39,11 @@ class AddEventsViewController: UITableViewController, UITextViewDelegate, UIText
     @IBOutlet weak var TextEventsTitle: UITextField!
     @IBOutlet weak var TextEventsDate: UITextField!
     @IBOutlet weak var TextEventsTime: UITextField!
+    @IBOutlet weak var TextEventsOptionsDate: UITextField!
     @IBOutlet weak var TextEventsDogs: UITextField!
     @IBOutlet weak var TextEventsHospitalName: UITextField!
     @IBOutlet weak var TextEventsDetails: UITextView!
+    @IBOutlet weak var OptionsDate: UISwitch!
     var DateSeleted: String! = ""
     var placeholderLabel : UILabel!
     
@@ -104,6 +106,14 @@ class AddEventsViewController: UITableViewController, UITextViewDelegate, UIText
         }
     }
     
+    @IBAction func SwitchDate(_ sender: Any) {
+        if OptionsDate.isOn == true {
+            self.tableView.reloadData()
+        } else {
+            self.tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -135,6 +145,11 @@ class AddEventsViewController: UITableViewController, UITextViewDelegate, UIText
         TimePicker.addTarget(self, action: #selector(AddEventsViewController.TimePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
         self.TextEventsTime.inputView = TimePicker
         
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = UIDatePickerMode.date
+        datePicker.addTarget(self, action: #selector(AddEventsViewController.datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
+        self.TextEventsOptionsDate.inputView = datePicker
+        
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
                 NSAttributedStringKey.font : UIFont(name: "Itim-Regular", size: 20)!,
@@ -143,6 +158,7 @@ class AddEventsViewController: UITableViewController, UITextViewDelegate, UIText
         
         toolbar.setItems([canecelButton,flexButton, doneButton], animated: true)
         self.TextEventsTime.inputAccessoryView = toolbar
+        self.TextEventsOptionsDate.inputAccessoryView = toolbar
 
         // MARK: setTextField()
         self.setTextField()
@@ -153,7 +169,7 @@ class AddEventsViewController: UITableViewController, UITextViewDelegate, UIText
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
 
     }
-    
+
     @objc func TimePickerValueChanged(sender: UIDatePicker )
     {
         
@@ -165,8 +181,19 @@ class AddEventsViewController: UITableViewController, UITextViewDelegate, UIText
         
     }
     
+    @objc func datePickerValueChanged(sender: UIDatePicker )
+    {
+        let formatter = DateFormatter()
+        formatter.locale = Locale.init(identifier: "th_TH")
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        formatter.dateFormat = "d MMMM YYYY"
+        self.TextEventsOptionsDate.text = formatter.string(from: sender.date)
+    }
+    
     @objc func donePressed(sender: UIBarButtonItem)
     {
+        self.TextEventsOptionsDate.resignFirstResponder()
         self.TextEventsTime.resignFirstResponder()
         view.endEditing(true)
         
@@ -174,6 +201,7 @@ class AddEventsViewController: UITableViewController, UITextViewDelegate, UIText
     
     @objc func canclePressed(sender: UIBarButtonItem)
     {
+        self.TextEventsOptionsDate.resignFirstResponder()
         self.TextEventsTime.resignFirstResponder()
         view.endEditing(true)
     }
@@ -189,6 +217,18 @@ class AddEventsViewController: UITableViewController, UITextViewDelegate, UIText
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.font = UIFont(name: "Itim-Regular", size: 14)!
         header.textLabel?.textColor = UIColor.darkGray
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height = super.tableView(tableView, heightForRowAt: indexPath)
+        if indexPath.section == 3 && indexPath.row == 1 {
+            if OptionsDate.isOn == true {
+                height = 60.0
+            } else {
+                height = 0.0
+            }
+        }
+        return height
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -207,6 +247,7 @@ class AddEventsViewController: UITableViewController, UITextViewDelegate, UIText
         let jsonURL : URL = URL(string: urlPath)!
         let request = NSMutableURLRequest(url: jsonURL)
         request.httpMethod = "POST"
+
         // Convert String to Date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d MMMM yyyy" //Your date format
@@ -215,14 +256,40 @@ class AddEventsViewController: UITableViewController, UITextViewDelegate, UIText
         let date = dateFormatter.date(from: TextEventsDate.text!) //according to date format your date string
         dateFormatter.dateFormat = "yyyy-MM-dd" //Your New Date format as per requirement change it own
         let newDate = dateFormatter.string(from: date!) //pass Date here
-        // Convert Notification Formate
-        let dformate = DateFormatter()
-        dformate.dateFormat = "YYYY-MM-dd HH:mm:ss"
-        dformate.locale = Locale(identifier: "en_US")
-        let s = dformate.date(from: "\((newDate)) \(TextEventsTime.text!)")
-        // Create Notification List
-        let CreateNotification = NotificationsItem(deadline: s!, title: TextEventsTitle.text!, UUID: UUID().uuidString)
-        NotificationsList.sharedInstance.addItem(CreateNotification)
+        
+        if OptionsDate.isOn == true {
+            // Convert Notification Formate
+            let dformate = DateFormatter()
+            dformate.dateFormat = "YYYY-MM-dd HH:mm:ss"
+            dformate.locale = Locale(identifier: "en_US")
+            let s = dformate.date(from: "\((newDate)) \(TextEventsTime.text!)")
+            // Create Notification List
+            let CreateNotification = NotificationsItem(deadline: s!, title: TextEventsTitle.text!, UUID: UUID().uuidString)
+            NotificationsList.sharedInstance.addItem(CreateNotification)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "d MMMM yyyy" //Your date format
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT+7:00") //Current time zone
+            dateFormatter.locale = Locale.init(identifier: "th_TH")//type Date location
+            let date = dateFormatter.date(from: TextEventsOptionsDate.text!) //according to date format your date string
+            dateFormatter.dateFormat = "yyyy-MM-dd" //Your New Date format as per requirement change it own
+            let newDate = dateFormatter.string(from: date!) //pass Date here
+            let dformate2 = DateFormatter()
+            dformate2.dateFormat = "YYYY-MM-dd HH:mm:ss"
+            dformate2.locale = Locale(identifier: "en_US")
+            let s2 = dformate.date(from: "\((newDate)) \(TextEventsTime.text!)")
+            // Create Notification List
+            let CreateNotification2 = NotificationsItem(deadline: s2!, title: TextEventsTitle.text!, UUID: UUID().uuidString)
+            NotificationsList.sharedInstance.addItem(CreateNotification2)
+        } else {
+            // Convert Notification Formate
+            let dformate = DateFormatter()
+            dformate.dateFormat = "YYYY-MM-dd HH:mm:ss"
+            dformate.locale = Locale(identifier: "en_US")
+            let s = dformate.date(from: "\((newDate)) \(TextEventsTime.text!)")
+            // Create Notification List
+            let CreateNotification = NotificationsItem(deadline: s!, title: TextEventsTitle.text!, UUID: UUID().uuidString)
+            NotificationsList.sharedInstance.addItem(CreateNotification)
+        }
         // Request Response
         let postString = "Email=\((Email!))&HeaderTitle=\(TextEventsTitle.text!)&Date=\((newDate))&Time=\(TextEventsTime.text!)&DogName=\(TextEventsDogs.text!)&HospitalName=\(TextEventsHospitalName.text!)&Details=\(TextEventsDetails.text!)"
         request.httpBody = postString.data(using: String.Encoding.utf8)
@@ -299,6 +366,7 @@ class AddEventsViewController: UITableViewController, UITextViewDelegate, UIText
                 self.TextEventsTitle.text = ""
                 self.TextEventsDate.text = ""
                 self.TextEventsTime.text = ""
+                self.TextEventsOptionsDate.text = ""
                 self.TextEventsDogs.text = ""
                 self.TextEventsHospitalName.text = ""
                 self.TextEventsDetails.text = ""
@@ -357,6 +425,7 @@ class AddEventsViewController: UITableViewController, UITextViewDelegate, UIText
         self.setTextFieldInterface(TextEventsTitle)
         self.setTextFieldInterface(TextEventsDate)
         self.setTextFieldInterface(TextEventsTime)
+        self.setTextFieldInterface(TextEventsOptionsDate)
         self.setTextFieldInterface(TextEventsDogs)
         self.setTextFieldInterface(TextEventsHospitalName)
         self.setTextViewInterface(TextEventsDetails)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2DA85A8930E7A29D307C94B5 /* Pods_Vdog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7A8A0F1FC67111560D2CD4 /* Pods_Vdog.framework */; };
+		540F99801FE16EED007341EF /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540F997F1FE16EEC007341EF /* LocalAuthentication.framework */; };
 		543EC4961FE03F76005F848B /* SpeciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543EC4951FE03F76005F848B /* SpeciesViewController.swift */; };
 		543FA4EC1FDE881500C35798 /* SelectedDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FA4EB1FDE881400C35798 /* SelectedDogsViewController.swift */; };
 		543FA4EE1FDE884300C35798 /* SelectedDogsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FA4ED1FDE884300C35798 /* SelectedDogsCell.swift */; };
@@ -24,7 +25,6 @@
 		54CC7C421FDD28B400F3FD78 /* Email.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54CC7C411FDD28B400F3FD78 /* Email.plist */; };
 		54CE5DC31FDD4C8600754882 /* AddDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE5DC21FDD4C8600754882 /* AddDogsViewController.swift */; };
 		54E39E701FDC425300DEC869 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E39E6F1FDC425300DEC869 /* Images.swift */; };
-		54E39E731FDC434400DEC869 /* IconApp.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E39E721FDC434400DEC869 /* IconApp.png */; };
 		54E5C4A11FDD8592009FA006 /* IconApp_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5C4A01FDD8592009FA006 /* IconApp_1024.png */; };
 		54E5C4A31FDD9C54009FA006 /* EventsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E5C4A21FDD9C54009FA006 /* EventsInfoViewController.swift */; };
 		54E944E61FE04A5D005547A0 /* SpeciesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E944E51FE04A5D005547A0 /* SpeciesCell.swift */; };
@@ -43,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		540F997F1FE16EEC007341EF /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		543EC4951FE03F76005F848B /* SpeciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesViewController.swift; sourceTree = "<group>"; };
 		543FA4EB1FDE881400C35798 /* SelectedDogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDogsViewController.swift; sourceTree = "<group>"; };
 		543FA4ED1FDE884300C35798 /* SelectedDogsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDogsCell.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		54CC7C411FDD28B400F3FD78 /* Email.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Email.plist; sourceTree = "<group>"; };
 		54CE5DC21FDD4C8600754882 /* AddDogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDogsViewController.swift; sourceTree = "<group>"; };
 		54E39E6F1FDC425300DEC869 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
-		54E39E721FDC434400DEC869 /* IconApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconApp.png; sourceTree = "<group>"; };
 		54E5C4A01FDD8592009FA006 /* IconApp_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconApp_1024.png; sourceTree = "<group>"; };
 		54E5C4A21FDD9C54009FA006 /* EventsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsInfoViewController.swift; sourceTree = "<group>"; };
 		54E944E51FE04A5D005547A0 /* SpeciesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesCell.swift; sourceTree = "<group>"; };
@@ -87,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				540F99801FE16EED007341EF /* LocalAuthentication.framework in Frameworks */,
 				2DA85A8930E7A29D307C94B5 /* Pods_Vdog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,7 +194,6 @@
 		54E39E711FDC433600DEC869 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				54E39E721FDC434400DEC869 /* IconApp.png */,
 				54E5C4A01FDD8592009FA006 /* IconApp_1024.png */,
 			);
 			path = Images;
@@ -220,6 +220,7 @@
 		E1E28B8B956D5FDAB837DB68 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				540F997F1FE16EEC007341EF /* LocalAuthentication.framework */,
 				BF7A8A0F1FC67111560D2CD4 /* Pods_Vdog.framework */,
 			);
 			name = Frameworks;
@@ -287,7 +288,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54E39E731FDC434400DEC869 /* IconApp.png in Resources */,
 				546C9BCB1FE097330029E158 /* bark.wav in Resources */,
 				54E5C4A11FDD8592009FA006 /* IconApp_1024.png in Resources */,
 				54BD254C1FDC36C800B176E7 /* LaunchScreen.storyboard in Resources */,
@@ -338,6 +338,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -350,6 +351,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -22,6 +22,17 @@ class SettingsViewController: UITableViewController {
     var plistPathUser: String!
     // Data Source
     var Email: String! = ""
+    // GetData
+    var User_Fname: String! = ""
+    var User_Lname: String! = ""
+    var User_Facebook: String! = ""
+    var User_Picture:  String! = ""
+    // URL
+    var url: NSURL!
+    
+    @IBOutlet weak var UserPhotos: UIImageView!
+    @IBOutlet weak var UserName: UILabel!
+    @IBOutlet weak var UserEmail: UILabel!
     
     private func LoadUserPlist() {
         let delegate = AppDelegate.sharedInstance
@@ -38,9 +49,29 @@ class SettingsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // SetValues()
+        self.LoadUserPlist()
+        self.GetUserProfile()
+        url = URL(string: "\((User_Picture!))")! as NSURL
+
+        let data = NSData(contentsOf: url as URL)
+        if data != nil {
+            self.UserPhotos.image = UIImage(data: data! as Data)
+        } else {
+            self.UserPhotos.image = #imageLiteral(resourceName: "IconApp_1024.png")
+        }
+        self.UserName.text = "\((User_Fname!)) "+"\((User_Lname!))"
+        self.UserEmail.text = Email
+    
         // MARK: Remove Back Title
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.UserPhotos.clipsToBounds = true
+        self.UserPhotos.layer.cornerRadius = 60.0
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -75,6 +106,60 @@ class SettingsViewController: UITableViewController {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.font = UIFont(name: "Itim-Regular", size: 14)!
         header.textLabel?.textColor = UIColor.darkGray
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height = super.tableView(tableView, heightForRowAt: indexPath)
+        if indexPath.section == 0 && indexPath.row == 1 {
+            if User_Facebook == "1" {
+                height = 0.0
+            } else {
+                height = 60.0
+            }
+        }
+        return height
+    }
+    
+    private func GetUserProfile() {
+        let urlPath = "https://devth.me/dog/API/GetUserProfile.php"
+        let jsonURL : URL = URL(string: urlPath)!
+        let request = NSMutableURLRequest(url: jsonURL)
+        request.httpMethod = "POST"
+
+        // Request Response
+        let postString = "Email=\((Email!))"
+        request.httpBody = postString.data(using: String.Encoding.utf8)
+        
+        let response:AutoreleasingUnsafeMutablePointer<URLResponse?>?=nil
+        
+        do{
+            let jsonSource:Data = try NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: response)
+            if let jsonObjects = (try? JSONSerialization.jsonObject(with: jsonSource, options: JSONSerialization.ReadingOptions.mutableContainers)) as? NSMutableArray{
+                
+                for dataDict : Any in jsonObjects  {
+                    
+                    let Code = (dataDict as AnyObject).object(forKey: "Code") as! NSString as String
+                    
+                    if(Code != "406"){
+                        let Count = (dataDict as AnyObject).object(forKey: "User_Count") as! NSString as String!
+                        let UEmail = (dataDict as AnyObject).object(forKey: "User_Email") as! NSString as String!
+                        let Fname = (dataDict as AnyObject).object(forKey: "User_Fname") as! NSString as String!
+                        let Lname = (dataDict as AnyObject).object(forKey: "User_Lname") as! NSString as String!
+                        let Phone = (dataDict as AnyObject).object(forKey: "User_Phone") as! NSString as String!
+                        let UFacebook = (dataDict as AnyObject).object(forKey: "User_Facebook") as! NSString as String!
+                        let Picture = (dataDict as AnyObject).object(forKey: "User_Picture") as! NSString as String!
+                        let TimeStamp = (dataDict as AnyObject).object(forKey: "User_TimeStamp") as! NSString as String!
+                        // Append Value
+                        User_Fname.append(Fname!)
+                        User_Lname.append(Lname!)
+                        User_Facebook.append(UFacebook!)
+                        User_Picture.append(Picture!)
+                    }
+                }
+            }
+        }catch{
+            print("ขาดการเชื่อมต่อกรุณาต่ออินเทอร์เน็ต")
+        }
     }
     
     @objc public func LogoutSuccess(){

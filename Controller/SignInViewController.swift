@@ -8,6 +8,8 @@
 
 import UIKit
 import FBSDKLoginKit
+import Alamofire
+import SwiftyJSON
 
 class SignInViewController: UIViewController {
 
@@ -95,11 +97,11 @@ class SignInViewController: UIViewController {
                         if let data = picture["data"] as? Dictionary<String,Any> {
                             if let pictureUrl = data["url"] as? String {
                                 self.FBPicture = pictureUrl
+                                // API_Facebook Register
+                                self.RegisteredFacebook(email: self.FBEmail,fname: self.FBFname,lname: self.FBLname,picture: self.FBPicture)
                             }
                         }
                     }
-                    // API_Facebook Register
-                    self.RegisteredFacebook(email: self.FBEmail,fname: self.FBFname,lname: self.FBLname,picture: self.FBPicture)
                 }
             })
         }
@@ -107,7 +109,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.TextInputEmail.attributedPlaceholder = NSAttributedString(string: "กรอกอีเมล",
                                                                         attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         self.TextInputPassword.attributedPlaceholder = NSAttributedString(string: "กรอกรหัสผ่าน",
@@ -126,6 +128,8 @@ class SignInViewController: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         
     }
+
+    
     
     private func SignInWithEmail(email: String, password: String) {
         let urlPath = "https://devth.me/dog/API/CheckLogin.php"
@@ -216,6 +220,14 @@ class SignInViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "เข้าสู่ระบบผ่าน Facebook", style: .default, handler: {(action) -> Void in
                 self.GetFacebookLogin()
             }))
+            alert.addAction(UIAlertAction(title: "สมัครสมาชิก", style: .default, handler: {(action) -> Void in
+                
+            }))
+            alert.addAction(UIAlertAction(title: "ยกเลิก", style: .default, handler: {(action) -> Void in
+                
+                
+                
+            }))
             self.present(alert, animated: true, completion: nil)
         }
     }
@@ -295,6 +307,36 @@ class SignInViewController: UIViewController {
     }
     
     private func RegisteredFacebook(email: String,fname: String,lname: String, picture: String) {
+        
+        let url = URL(string: "https://devth.me/dog/API/RegisterFB.php")!
+        let parameters: [String: String] = ["Facebook_Email": "\((email))",
+                                            "Facebook_Fname": "\((fname))",
+                                            "Facebook_Lname": "\((lname))",
+                                            "Facebook_Picture": "\((picture))"]
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).validate(statusCode: 200..<600).responseJSON() { response in
+            
+            if let status = response.response?.statusCode {
+                switch(status){
+                 case 200:
+                    var delegate = AppDelegate.sharedInstance
+                    let pathForThePlistFile = AppDelegate.sharedInstance.plistPathInUser
+                    do {
+                        try email.write(toFile: pathForThePlistFile, atomically: true, encoding: String.Encoding.utf8)
+                    } catch {
+                        print(error)
+                    }
+                    self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(SignInViewController.FacebookSuccess), userInfo: nil, repeats: true)
+                    self.showLoading()
+                default:
+                    self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(SignInViewController.FacebookUnSuccess), userInfo: nil, repeats: true)
+                    self.showLoading()
+                }
+            }
+            
+        }
+        
+        /*
         let urlPath = "https://devth.me/dog/API/RegisterFB.php"
         let jsonURL : URL = URL(string: urlPath)!
         let request = NSMutableURLRequest(url: jsonURL)
@@ -342,7 +384,7 @@ class SignInViewController: UIViewController {
             }
         }catch{
             print("ขาดการเชื่อมต่อกรุณาต่ออินเทอร์เน็ต")
-        }
+        }*/
     }
     
     @objc private func FacebookSuccess() {

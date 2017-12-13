@@ -62,11 +62,11 @@ class EventsInfoViewController: UITableViewController {
 
     }
     
-    override func viewDidLayoutSubviews() {
+     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.Images.clipsToBounds = true
-        self.Images.layer.cornerRadius = 50.0
-    }
+        self.Images.layer.cornerRadius = 60.0
+     }
 
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
     {
