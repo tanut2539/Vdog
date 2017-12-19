@@ -12,36 +12,67 @@ protocol SpeciesDelegate: class {
     func userDidEnterInformation(info: String)
 }
 
-class SpeciesViewController: UITableViewController {
+class SpeciesViewController: UITableViewController,UISearchBarDelegate {
 
     // Data Source
     var Species_Count: String! = ""
     var Species_ID: [String] = []
     var Species_Name: [String] = []
     var Species_Type: [String] = []
+    var filteredData: [String]!
     // Delegate Pass Data
     weak var delegate: SpeciesDelegate? = nil
+    
+    @IBOutlet weak var AutoComplete: UISearchBar!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.GetSpecisList()
+        
+        // Search DogType
+        self.AutoComplete.delegate = self
+        self.AutoComplete.backgroundImage = UIImage()
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).font = UIFont(name: "Itim-Regular", size: 17.0)
+        filteredData = Species_Name
+        // MARK: Remove Back Title
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style:.plain, target:nil, action:nil)
+        // MARK: Hide Keyboard
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:))))
         self.tableView.tableFooterView = UIView()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Species_Count.count
+        return filteredData.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let Cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SpeciesCell
-        Cell.SpeciesName.text = Species_Name[indexPath.row]
+        Cell.SpeciesName.text = filteredData[indexPath.row]
         return Cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView?.deselectRow(at: indexPath, animated: true)
-        delegate?.userDidEnterInformation(info: Species_Name[indexPath.row])
+        delegate?.userDidEnterInformation(info: filteredData[indexPath.row])
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = .none
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filteredData = searchText.isEmpty ? Species_Name : Species_Name.filter({(dataString: String) -> Bool in
+            // If dataItem matches the searchText, return true to include it
+            return dataString.range(of: searchText, options: .caseInsensitive) != nil
+        })
+        
+        self.tableView.reloadData()
     }
     
     private func GetSpecisList() {
@@ -76,6 +107,14 @@ class SpeciesViewController: UITableViewController {
         }catch{
             print("ขาดการเชื่อมต่อกรุณาต่ออินเทอร์เน็ต")
         }
+    }
+    
+    // MARK: Hide Keyboard
+    @objc private func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            view.endEditing(true)
+        }
+        sender.cancelsTouchesInView = false
     }
 
 }

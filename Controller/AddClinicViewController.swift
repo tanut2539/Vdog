@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ContactsUI
+import PhoneNumberKit
 
 class AddClinicViewController: UITableViewController {
 
@@ -25,7 +27,7 @@ class AddClinicViewController: UITableViewController {
     
     @IBOutlet weak var TextNameClinic: UITextField!
     @IBOutlet weak var TextAddressClinic: UITextView!
-    @IBOutlet weak var TextClinicPhone: UITextField!
+    @IBOutlet weak var TextClinicPhone: PhoneNumberTextField!
     
     private func LoadUserPlist() {
         let delegate = AppDelegate.sharedInstance

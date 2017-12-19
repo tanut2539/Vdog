@@ -166,12 +166,16 @@ class SelectedDogsViewController: UICollectionViewController , UICollectionViewD
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let Cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SelectedDogsCell
         Cell.DogName.text = self.Dog_Name[indexPath.row]
-        url = URL(string: "\((self.Dog_Picture[indexPath.row]))")! as NSURL
-        let data = NSData(contentsOf: url as URL)
-        if data != nil {
-            Cell.Images.image = UIImage(data: data! as Data)
-        } else {
+        if self.Dog_Picture[indexPath.row] == "" {
             Cell.Images.image = #imageLiteral(resourceName: "IconApp_1024.png")
+        } else {
+            url = URL(string: "\((self.Dog_Picture[indexPath.row]))")! as NSURL
+            let data = NSData(contentsOf: url as URL)
+            if data != nil {
+                Cell.Images.image = UIImage(data: data! as Data)
+            } else {
+                Cell.Images.image = #imageLiteral(resourceName: "IconApp_1024.png")
+            }
         }
         Cell.frame.size.width = screenWidth / 2
         Cell.frame.size.height = screenHeight / 2

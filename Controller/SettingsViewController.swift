@@ -49,24 +49,54 @@ class SettingsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // SetValues()
+        // LoadUserPlist
         self.LoadUserPlist()
-        self.GetUserProfile()
-        url = URL(string: "\((User_Picture!))")! as NSURL
-
-        let data = NSData(contentsOf: url as URL)
-        if data != nil {
-            self.UserPhotos.image = UIImage(data: data! as Data)
-        } else {
-            self.UserPhotos.image = #imageLiteral(resourceName: "IconApp_1024.png")
-        }
-        self.UserName.text = "\((User_Fname!)) "+"\((User_Lname!))"
-        self.UserEmail.text = Email
-    
+        // Refresh Data
+        self.RefreshData()
         // MARK: Remove Back Title
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // LoadUserPlist
+        self.LoadUserPlist()
+        // Refresh Data
+        self.RefreshData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // LoadUserPlist
+        self.LoadUserPlist()
+        // Refresh Data
+        self.RefreshData()
+    }
+    
+    private func RefreshData() {
+        self.User_Fname.removeAll()
+        self.User_Lname.removeAll()
+        self.User_Facebook.removeAll()
+        self.User_Picture.removeAll()
+        // GetUserProfile()
+        self.GetUserProfile()
+        if User_Picture == "" {
+            self.UserPhotos.image = #imageLiteral(resourceName: "IconApp_1024.png")
+        } else {
+            url = URL(string: "\((User_Picture!))")! as NSURL
+            let data = NSData(contentsOf: url as URL)
+            if data != nil {
+                self.UserPhotos.image = UIImage(data: data! as Data)
+            } else {
+                self.UserPhotos.image = #imageLiteral(resourceName: "IconApp_1024.png")
+            }
+        }
+        self.UserName.text = "\((User_Fname!)) "+"\((User_Lname!))"
+        self.UserEmail.text = Email
+        self.tableView.reloadData()
+    }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

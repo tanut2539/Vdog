@@ -35,6 +35,7 @@ class AddEventsViewController: UITableViewController, UITextViewDelegate, UIText
         }
     }
     
+    @IBOutlet weak var EEEE: UITextField!
     @IBOutlet weak var HeaderBackground: UIView!
     @IBOutlet weak var TextEventsTitle: UITextField!
     @IBOutlet weak var TextEventsDate: UITextField!
@@ -149,7 +150,7 @@ class AddEventsViewController: UITableViewController, UITextViewDelegate, UIText
         datePicker.datePickerMode = UIDatePickerMode.date
         datePicker.addTarget(self, action: #selector(AddEventsViewController.datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
         self.TextEventsOptionsDate.inputView = datePicker
-        
+
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
                 NSAttributedStringKey.font : UIFont(name: "Itim-Regular", size: 20)!,
@@ -191,6 +192,7 @@ class AddEventsViewController: UITableViewController, UITextViewDelegate, UIText
         self.TextEventsOptionsDate.text = formatter.string(from: sender.date)
     }
     
+
     @objc func donePressed(sender: UIBarButtonItem)
     {
         self.TextEventsOptionsDate.resignFirstResponder()
